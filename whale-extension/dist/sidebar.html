@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, user-scalable=no">
+  <title>DIARY</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <script src="bundle.js"></script>
+</head>
+
+<body class="d-flex flex-column">
+
+  <!-- header -->
+  <div id="header" class="bg-blue white">
+    <div class="d-flex m-5 mx-0 p-3 py-0">
+      <h1 class="title">DIARY</h1>
+      <div class="m-auto mr-0">
+        <button id="btn_create_diary" class="btn-text p-1">
+          <img src="./img/add-24px.svg" alt="add">
+        </button>
+        <button id="btn_create_diary" class="btn-text p-1">
+          <img src="./img/more_vert-24px.svg" alt="more">
+        </button>
+      </div>
+    </div>
+
+    <div id="header_month">
+      <button id="btn_prev" class="btn-text p-2">
+        <img src="./img/keyboard_arrow_left-24px.svg" alt="Prev">
+      </button>
+      <h2 id="calendar_title" class="flex-grow m-4 mx-0"></h2>
+      <button id="btn_next" class="btn-text p-2">
+        <img src="./img/keyboard_arrow_right-24px.svg" alt="Next">
+      </button>
+    </div>
+
+    <div id="header_days">
+      <div class="w-1-7">일</div>
+      <div class="w-1-7">월</div>
+      <div class="w-1-7">화</div>
+      <div class="w-1-7">수</div>
+      <div class="w-1-7">목</div>
+      <div class="w-1-7">금</div>
+      <div class="w-1-7">토</div>
+    </div>
+  </div>
+
+  <!-- Calendar Body -->
+  <div id="calendar_body"></div>
+
+  <!-- Footer -->
+  <footer>gunhoflash</footer>
+</body>
+
+</html>

@@ -1,0 +1,22 @@
+{
+  "manifest_version": 2,
+  "name": "DIARY",
+  "version": "1.0.0",
+
+  "description": "매일 쓰는 일기",
+  "icons": {
+    // "16": "icon16.png",
+    // "48": "icon48.png",
+    // "128": "icon128.png" 
+  },
+
+  "sidebar_action": {
+    "default_page": "sidebar.html",
+    "default_icon": {
+      // "16": "images/icon16.png"
+    },
+    "default_title": "사이드바앱",
+    "use_navigation_bar": false,
+    "mobile_user_agent": false
+  }
+}
