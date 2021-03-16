@@ -18,5 +18,9 @@
     "default_title": "사이드바앱",
     "use_navigation_bar": false,
     "mobile_user_agent": false
-  }
+  },
+
+  "permissions": [
+    "storage"
+  ]
 }
