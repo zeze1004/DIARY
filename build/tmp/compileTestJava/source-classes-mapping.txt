@@ -1,0 +1,4 @@
+com/ssonobackend/diarybackend/DiaryBackendApplicationTests.java
+ com.ssonobackend.diarybackend.DiaryBackendApplicationTests
+com/ssonobackend/diarybackend/service/MemberServiceTest.java
+ com.ssonobackend.diarybackend.service.MemberServiceTest
