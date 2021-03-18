@@ -13,20 +13,15 @@
 <body class="d-flex flex-column">
 
   <!-- header -->
-  <div id="header" class="bg-blue white">
-    <div class="d-flex m-5 mx-0 p-3 py-0">
+  <div id="header">
+    <div id="topbar">
       <h1 class="title">DIARY</h1>
-      <div class="m-auto mr-0">
-        <button id="btn_create_diary" class="btn-text p-1">
-          <img src="./img/add-24px.svg" alt="add">
-        </button>
-        <button id="btn_create_diary" class="btn-text p-1">
-          <img src="./img/more_vert-24px.svg" alt="more">
-        </button>
-      </div>
+      <button id="btn_option" class="btn-text p-1 m-auto mr-0">
+        <img src="./img/more_vert-24px.svg" alt="More">
+      </button>
     </div>
 
-    <div id="header_month">
+    <div id="calendar_month">
       <button id="btn_prev" class="btn-text p-2">
         <img src="./img/keyboard_arrow_left-24px.svg" alt="Prev">
       </button>
@@ -36,7 +31,7 @@
       </button>
     </div>
 
-    <div id="header_days">
+    <div id="calendar_days">
       <div class="w-1-7">일</div>
       <div class="w-1-7">월</div>
       <div class="w-1-7">화</div>
@@ -49,6 +44,16 @@
 
   <!-- Calendar Body -->
   <div id="calendar_body"></div>
+
+  <!-- diary view -->
+  <div id="diary_view" class="p-3 h-100">
+    <div class="d-flex">
+      <input type="text" name="title" id="diary_title" autocomplete="off" placeholder="제목을 입력하세요">
+      <button id="btn_save_diary">저장</button>
+    </div>
+    <small type="date" id="diary_date" class="ash ml-auto">2021-03-18</small>
+    <textarea name="content" id="diary_content" class="h-100" placeholder="내용을 입력하세요"></textarea>
+  </div>
 
   <!-- Footer -->
   <footer>gunhoflash</footer>

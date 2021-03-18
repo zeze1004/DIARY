@@ -1,3 +1,4 @@
+import { getDiary } from './api/diary';
 import * as DateState from './date';
 
 const emptyCells: HTMLElement[] = [];
@@ -6,7 +7,7 @@ const dateCells: HTMLElement[] = [];
 // create a new cell
 function createCell(date?: number): HTMLElement {
   const template = document.createElement('template');
-  template.innerHTML = `<div class="calendar_cell">${date ? date : '&nbsp;'}</div>`;
+  template.innerHTML = `<div class="calendar_cell"><span>${date ? date : '&nbsp;'}</span></div>`;
   return template.content.firstElementChild as HTMLElement;
 }
 
@@ -36,7 +37,7 @@ function initCalendarBody() {
 }
 
 // update the calendar
-const updateCalendar: DateState.ChangeListener = state => {
+const updateCalendar: DateState.ChangeListener = async state => {
   const year = state.year();
   const month = state.month(); // 0 ~ 11
   const date = state.date(); // 1 ~ 31
@@ -56,12 +57,21 @@ const updateCalendar: DateState.ChangeListener = state => {
   // update title
   const calendarTitleElement = document.getElementById('calendar_title') as HTMLElement;
   calendarTitleElement.innerHTML = state.format('MMMM YYYY');
+
+  const diaries = await getDiary({ year, month });
+  dateCells.slice(0, diaries.length).map((cell, index) => {
+    (cell.firstElementChild as HTMLElement).dataset.feelings = diaries[index].feelings.toString();
+  });
 }
 
 // init the calendar
-window.onload = function () {
+function initCalendar() {
   initCalendarButtons();
   initCalendarBody();
   DateState.addOnChangeListener(updateCalendar);
   updateCalendar(DateState.getDate());
+}
+
+export {
+  initCalendar,
 }
