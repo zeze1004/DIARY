@@ -47,12 +47,17 @@
 
   <!-- diary view -->
   <div id="diary_view" class="p-3 h-100">
-    <div class="d-flex">
-      <input type="text" name="title" id="diary_title" autocomplete="off" placeholder="제목을 입력하세요">
-      <button id="btn_save_diary">저장</button>
+    <div id="diary_editor_view">
+      <div class="d-flex">
+        <input type="text" name="title" id="diary_title" autocomplete="off" placeholder="제목을 입력하세요">
+        <button id="btn_save_diary">저장</button>
+      </div>
+      <small type="date" id="diary_date" class="ash ml-auto">2021-03-18</small>
+      <textarea name="content" id="diary_content" class="h-100" placeholder="내용을 입력하세요"></textarea>
     </div>
-    <small type="date" id="diary_date" class="ash ml-auto">2021-03-18</small>
-    <textarea name="content" id="diary_content" class="h-100" placeholder="내용을 입력하세요"></textarea>
+    <div id="empty_view">
+      <span>일기가 없습니다</span>
+    </div>
   </div>
 
   <!-- Footer -->

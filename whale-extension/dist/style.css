@@ -38,8 +38,11 @@ h5 { margin: 1rem 0 .75rem 0; }
 h6 { margin: .75rem 0 .5rem 0; }
 
 button {
-  cursor: pointer;
   outline: none;
+}
+
+button:not(:disabled) {
+  cursor: pointer;
 }
 
 footer {
@@ -120,7 +123,7 @@ footer {
 .align-items-center { align-items: center; }
 .flex-grow { flex-grow: 1; }
 
-.d-none { display: none; }
+.d-none { display: none !important; }
 
 /* text */
 .bold { font-weight: bold; }
@@ -196,52 +199,40 @@ footer {
 }
 
 .calendar_cell {
+  align-items: center;
+  color: #AFAFAF;
   display: flex;
-  padding: 1.25em 0;
+  flex-direction: column;
+  overflow: hidden;
+  padding: 1.25em 0.25em;
   width: calc(100% / 7);
+}
+
+.calendar_cell[data-selected="true"] {
+  color: #414141;
 }
 
 .calendar_cell[data-visible="false"] {
   display: none;
 }
 
-.calendar_cell span {
-  /* border-radius: 100em; */
-  margin: auto;
-  min-width: 2em;
-  overflow: hidden;
-  padding: 0.25em;
+.calendar_cell .dot {
+  border-radius: 2px;
+  height: 5px;
+  width: 5px;
 }
 
-.calendar_cell span[data-feelings="0"] {
-  /* background-color: lightcoral; */
-  border-bottom: 3px solid lightcoral;
+.calendar_cell[data-feelings="0"] .dot {
+  background-color: #f87453;
 }
-.calendar_cell span[data-feelings="1"] {
-  /* background-color: lightgoldenrodyellow; */
-  border-bottom: 3px solid lightgoldenrodyellow;
+.calendar_cell[data-feelings="1"] .dot {
+  background-color: #eca100;
 }
-.calendar_cell span[data-feelings="2"] {
-  /* background-color: lightgreen; */
-  border-bottom: 3px solid lightgreen;
+.calendar_cell[data-feelings="2"] .dot {
+  background-color: #0ccc4c;
 }
-.calendar_cell span[data-feelings="3"] {
-  /* background-color: lightblue; */
-  border-bottom: 3px solid lightblue;
-}
-
-#editor {
-  height: 0;
-  left: 0;
-  overflow: hidden;
-  position: absolute;
-  transition: height 0.32s cubic-bezier(.35,.08,.26,1);
-  top: 0;
-  width: 100%;
-}
-
-#editor.show {
-  height: 100%;
+.calendar_cell[data-feelings="3"] .dot {
+  background-color: #2991f1;
 }
 
 .rotate {
@@ -250,11 +241,16 @@ footer {
 
 #diary_view {
   border-top: 2px solid #EAEAEA;
-  display: flex;
-  flex-direction: column;
+  flex-grow: 1;
 }
 
-#diary_view > * {
+#diary_editor_view {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+#diary_editor_view > * {
   margin-bottom: 0.2em;
 }
 
@@ -282,6 +278,10 @@ footer {
   background-color: #0481e7;
 }
 
+#btn_save_diary:disabled {
+  background-color: #cccccc;
+}
+
 input, textarea {
   border: none;
   border-radius: 0.375em;
@@ -302,4 +302,12 @@ input:focus, textarea:focus {
 
 input::placeholder, textarea::placeholder {
   color: #BABABA;
+}
+
+#empty_view {
+  align-items: center;
+  color: #BABABA;
+  display: flex;
+  height: 100%;
+  justify-content: center;
 }

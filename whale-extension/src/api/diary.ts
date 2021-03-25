@@ -1,23 +1,16 @@
-import { getDate } from "../date";
+import * as DateState from "../state/date";
+import * as DiaryState from "../state/diary";
 
-interface Diary {
-  unixTimestamp: number;
-  title: string;
-  content: string;
-  /** 0 ~ 3 */
-  feelings: number;
-}
-
-async function getDiary({ year, month }: { year: number, month: number }) {
+async function getDiary({ year, month }: { year: number, month: number }): Promise<DiaryState.Diary[]> {
   console.log(`getDiary(${year}, ${month})`);
 
-  const daysInMonth = getDate().daysInMonth();
+  const daysInMonth = DateState.getState().daysInMonth();
   const diaries = Array(daysInMonth).fill(null).map((_, i) => ({
       unixTimestamp: Number(new Date()),
       title: 'test',
       content: 'test',
       feelings: i % 4,
-    } as Diary));
+    } as DiaryState.Diary));
 
   return diaries;
 }

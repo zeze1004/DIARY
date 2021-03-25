@@ -1,5 +1,5 @@
 import { getDiary } from './api/diary';
-import * as DateState from './date';
+import * as DateState from './state/date';
 
 const emptyCells: HTMLElement[] = [];
 const dateCells: HTMLElement[] = [];
@@ -7,14 +7,15 @@ const dateCells: HTMLElement[] = [];
 // create a new cell
 function createCell(date?: number): HTMLElement {
   const template = document.createElement('template');
-  template.innerHTML = `<div class="calendar_cell"><span>${date ? date : '&nbsp;'}</span></div>`;
+  template.innerHTML = date ? `
+    <div class="calendar_cell" data-date="${date}">
+      <span class="date">${date}</span>
+      <span class="dot"></span>
+    </div>`
+    :
+    `<div class="calendar_cell"></div>`
+    ;
   return template.content.firstElementChild as HTMLElement;
-}
-
-// init buttons
-function initCalendarButtons() {
-  document.getElementById('btn_next')?.addEventListener('click', DateState.addMonth);
-  document.getElementById('btn_prev')?.addEventListener('click', DateState.subtractMonth);
 }
 
 // create cells and append to the calendar
@@ -32,17 +33,17 @@ function initCalendarBody() {
   for (let i = 1; i <= 31; i++) {
     const cell = createCell(i);
     dateCells.push(cell);
+    cell.addEventListener('click', onClickCell);
     calendarBodyElement.appendChild(cell);
   }
 }
 
 // update the calendar
-const updateCalendar: DateState.ChangeListener = async state => {
-  const year = state.year();
-  const month = state.month(); // 0 ~ 11
-  const date = state.date(); // 1 ~ 31
-  const daysInMonth = state.daysInMonth();
-  const day = state.day(); // 0(Sun) ~ 6(Sat)
+const updateCalendar: DateState.ChangeListener = async date => {
+  const year = date.year();
+  const month = date.month(); // 0 ~ 11
+  const daysInMonth = date.daysInMonth();
+  const day = date.date(1).day(); // 0(Sun) ~ 6(Sat)
 
   // show/hide empty cells
   emptyCells.map((cell, index) => {
@@ -51,25 +52,29 @@ const updateCalendar: DateState.ChangeListener = async state => {
 
   // show/hide date cells
   dateCells.map((cell, index) => {
+    delete cell.dataset.selected;
     cell.dataset.visible = String(index < daysInMonth);
   });
+  dateCells[date.date() - 1].dataset.selected = "true";
 
   // update title
   const calendarTitleElement = document.getElementById('calendar_title') as HTMLElement;
-  calendarTitleElement.innerHTML = state.format('MMMM YYYY');
+  calendarTitleElement.innerHTML = date.format('MMMM YYYY');
 
   const diaries = await getDiary({ year, month });
   dateCells.slice(0, diaries.length).map((cell, index) => {
-    (cell.firstElementChild as HTMLElement).dataset.feelings = diaries[index].feelings.toString();
+    cell.dataset.feelings = diaries[index].feelings.toString();
   });
+}
+
+function onClickCell(this: HTMLElement) {
+  DateState.setDate(Number(this.dataset.date));
 }
 
 // init the calendar
 function initCalendar() {
-  initCalendarButtons();
   initCalendarBody();
   DateState.addOnChangeListener(updateCalendar);
-  updateCalendar(DateState.getDate());
 }
 
 export {
