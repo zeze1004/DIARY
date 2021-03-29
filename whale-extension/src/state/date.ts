@@ -25,12 +25,12 @@ export function isToday(date: Date) {
   return date.format('YYYYMMDD') === dayjs().format('YYYYMMDD');
 }
 
-export function getState() {
+export function getDate() {
   return date.clone();
 }
 
 function getSimpleState() {
-  const state = getState();
+  const state = getDate();
   return {
     year: state.year(),
     month: state.month(),
@@ -58,7 +58,11 @@ export function addOnChangeListener(listener: ChangeListener) {
 }
 
 export function dispatchChange() {
-  const date = getState();
+  const date = getDate();
   const simpleDate = getSimpleState();
   onChangeListeners.forEach(listener => listener(date, simpleDate));
+}
+
+export function simpleDateToDate({ year, month, date}: SimpleDate) {
+  return dayjs().year(year).month(month).date(date);
 }

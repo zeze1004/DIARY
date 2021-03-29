@@ -1,16 +1,21 @@
-import { SimpleDate } from '@state/date';
+import { Date } from '@state/date';
 import { Diary } from '@state/diary';
 
-function diaryStateToKey({ year, month, date }: SimpleDate) {
-  return `${year}-${month}-${date}`;
+function diaryStateToKey(date: Date) {
+  return date.format('YYYY-MM-DD');
 }
 
-export function getDiary(date: SimpleDate) {
-  const diaries = localStorage.getItem(diaryStateToKey(date));
-  return diaries ? JSON.parse(diaries) : [];
+function getDiary(date: Date) {
+  const diary = localStorage.getItem(diaryStateToKey(date));
+  return diary ? JSON.parse(diary) : null;
 }
 
-export function setDiary(date: SimpleDate, diary: Diary) {
-  const data = JSON.stringify(JSON.stringify(diary));
+function setDiary(date: Date, diary: Diary) {
+  const data = JSON.stringify(diary);
   localStorage.setItem(diaryStateToKey(date), data);
 }
+
+export default {
+  getDiary,
+  setDiary,
+};

@@ -1,31 +1,40 @@
-import { SimpleDate } from "@state/date";
+import { Date } from "@state/date";
 import { Diary } from "@state/diary";
 
-export async function getDiary(date: SimpleDate): Promise<Diary> {
-  console.log(`getDiary(${date.year}, ${date.month})`);
+async function getDiary(date: Date): Promise<Diary> {
+  const formatted = date.format('YYYY-MM-DD');
+  console.log(`getDiary(${formatted})`);
 
   const diary = {
-    unixTimestamp: Number(new Date()),
+    date: formatted,
     title: 'test',
     content: 'test',
     feelings: Math.floor(Math.random() * 4) % 4,
-  }
+  };
 
   return diary;
 }
 
-export function createDiary() {
+function createDiary() {
   return;
 }
 
-export function updateDiary() {
+function updateDiary() {
   return;
 }
 
-export function deleteDiary() {
+function deleteDiary() {
   return;
 }
 
-export function getRandomDiary() {
+function getRandomDiary() {
   return;
+}
+
+export default {
+  getDiary,
+  createDiary,
+  updateDiary,
+  deleteDiary,
+  getRandomDiary,
 }

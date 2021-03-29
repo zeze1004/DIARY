@@ -1,9 +1,10 @@
+import LocalStorage from "@/localStorage/diary";
 import API from "@api/diary";
-import LocalStorage from '@localStorage/diary';
-import { SimpleDate } from "./date";
+import { Date } from "./date";
 
 export interface Diary {
-  unixTimestamp: number;
+  /** YYYY-MM-DD */
+  date: string;
   title: string;
   content: string;
   /** 0 ~ 3 */
@@ -16,13 +17,13 @@ export interface Diary {
 // change listeners
 // const onChangeListeners: ChangeListener[] = [];
 
-export async function getDiary(date: SimpleDate) {
+export async function getDiary(date: Date) {
   const diaryFromAPI = await API.getDiary(date);
   const diaryFromLocalStorage = await LocalStorage.getDiary(date);
   return diaryFromLocalStorage;
 }
 
-export async function setDiary(date: SimpleDate, diary: Diary) {
+export async function setDiary(date: Date, diary: Diary) {
   await LocalStorage.setDiary(date, diary);
   // 
   // dispatchChange();
