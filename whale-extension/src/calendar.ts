@@ -1,5 +1,5 @@
 import { getDiary } from '@state/diary';
-import * as DateState from '@state/date';
+import { addOnChangeListener, ChangeListener, setDate } from './state/date';
 
 const emptyCells: HTMLElement[] = [];
 const dateCells: HTMLElement[] = [];
@@ -39,7 +39,7 @@ function initCalendarBody() {
 }
 
 // update the calendar
-const updateCalendar: DateState.ChangeListener = async date => {
+const updateCalendar: ChangeListener = async date => {
   const year = date.year();
   const month = date.month(); // 0 ~ 11
   const daysInMonth = date.daysInMonth();
@@ -70,13 +70,13 @@ const updateCalendar: DateState.ChangeListener = async date => {
 }
 
 function onClickCell(this: HTMLElement) {
-  DateState.setDate(Number(this.dataset.date));
+  setDate(Number(this.dataset.date));
 }
 
 // init the calendar
 function initCalendar() {
   initCalendarBody();
-  DateState.addOnChangeListener(updateCalendar);
+  addOnChangeListener(updateCalendar);
 }
 
 export {

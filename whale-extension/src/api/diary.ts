@@ -1,7 +1,7 @@
-import * as DateState from "@state/date";
-import * as DiaryState from "@state/diary";
+import { SimpleDate } from "@state/date";
+import { Diary } from "@state/diary";
 
-export async function getDiary(date: DateState.SimpleDate): Promise<DiaryState.Diary> {
+export async function getDiary(date: SimpleDate): Promise<Diary> {
   console.log(`getDiary(${date.year}, ${date.month})`);
 
   const diary = {
