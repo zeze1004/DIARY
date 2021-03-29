@@ -13,8 +13,7 @@ function createCell(date?: number): HTMLElement {
       <span class="dot"></span>
     </div>`
     :
-    `<div class="calendar_cell"></div>`
-    ;
+    `<div class="calendar_cell"></div>`;
   return template.content.firstElementChild as HTMLElement;
 }
 
@@ -67,7 +66,7 @@ const updateCalendar: ChangeListener = async date => {
   dateCells.slice(0, diaries.length).map((cell, index) => {
     cell.dataset.feelings = diaries[index]?.feelings.toString();
   });
-}
+};
 
 function onClickCell(this: HTMLElement) {
   setDate(Number(this.dataset.date));
