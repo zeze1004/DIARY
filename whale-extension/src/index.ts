@@ -1,6 +1,7 @@
+import { getDiary } from './api/diary';
 import { initCalendar } from './calendar';
-import * as DateState from '@state/date';
-import * as DiaryState from '@state/diary';
+import { addMonth, addOnChangeListener, Date, dispatchChange, isToday, SimpleDate, subtractMonth } from './state/date';
+import { Diary } from './state/diary';
 import { getFromStorage, setToStorage } from './storage';
 
 async function test() {
@@ -17,14 +18,13 @@ function initView() {
   });
 
   // init buttons
-  document.getElementById('btn_next')?.addEventListener('click', DateState.addMonth);
-  document.getElementById('btn_prev')?.addEventListener('click', DateState.subtractMonth);
-  DateState.addOnChangeListener(setDiaryView);
+  document.getElementById('btn_next')?.addEventListener('click', addMonth);
+  document.getElementById('btn_prev')?.addEventListener('click', subtractMonth);
+  addOnChangeListener(setDiaryView);
 }
 
-async function setDiaryView(date: DateState.Date, simpleDate: DateState.SimpleDate) {
-  const isToday: boolean = DateState.isToday(date);
-  const diary: DiaryState.Diary = await DiaryState.getDiary(simpleDate);
+async function setDiaryView(date: Date, simpleDate: SimpleDate) {
+  const diary: Diary = await getDiary(simpleDate);
 
   const diaryEditorView = document.getElementById('diary_editor_view') as HTMLElement;
   const diaryTitle = document.getElementById('diary_title') as HTMLInputElement;
@@ -32,7 +32,7 @@ async function setDiaryView(date: DateState.Date, simpleDate: DateState.SimpleDa
   const diaryContent = document.getElementById('diary_content') as HTMLInputElement;
   const emptyView = document.getElementById('empty_view') as HTMLElement;
 
-  if (diary || isToday) {
+  if (diary || isToday(date)) {
     diaryTitle.value = diary?.title || '';
     diaryDate.innerHTML = date.format('YYYY-MM-DD');
     diaryContent.value = diary?.content || '';
@@ -49,5 +49,5 @@ window.onload = function () {
   initView();
   initCalendar();
 
-  DateState.dispatchChange();
+  dispatchChange();
 }
