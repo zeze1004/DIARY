@@ -36,11 +36,3 @@ export async function setDiary(date: SimpleDate, diary: Diary) {
 //   const clone = JSON.parse(JSON.stringify(diaries));
 //   onChangeListeners.forEach(listener => listener(clone));
 // }
-
-export default {
-  // ChangeListener,
-  getDiary,
-  setDiary,
-  // addOnChangeListener,
-  // dispatchChange,
-}

@@ -74,11 +74,7 @@ function onClickCell(this: HTMLElement) {
 }
 
 // init the calendar
-function initCalendar() {
+export function initCalendar() {
   initCalendarBody();
   addOnChangeListener(updateCalendar);
-}
-
-export {
-  initCalendar,
 }

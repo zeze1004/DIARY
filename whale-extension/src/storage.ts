@@ -1,4 +1,4 @@
-async function setToStorage(key: string, value: any): Promise<void> {
+export async function setToStorage(key: string, value: any): Promise<void> {
   return new Promise((resolve, reject) => {
     chrome.storage.local.set({[key]: value}, function() {
       if (chrome.runtime.lastError) {
@@ -10,7 +10,7 @@ async function setToStorage(key: string, value: any): Promise<void> {
   });
 }
 
-async function getFromStorage(key: string): Promise<any> {
+export async function getFromStorage(key: string): Promise<any> {
   return new Promise((resolve, reject) => {
     chrome.storage.local.get(key, function (result) {
       if (chrome.runtime.lastError) {
@@ -20,9 +20,4 @@ async function getFromStorage(key: string): Promise<any> {
       resolve(result[key]);
     });
   });
-}
-
-export {
-  setToStorage,
-  getFromStorage,
 }

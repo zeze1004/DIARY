@@ -29,11 +29,3 @@ export function deleteDiary() {
 export function getRandomDiary() {
   return;
 }
-
-export default {
-  getDiary,
-  createDiary,
-  updateDiary,
-  deleteDiary,
-  getRandomDiary,
-}

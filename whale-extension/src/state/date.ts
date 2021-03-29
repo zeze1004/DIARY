@@ -62,13 +62,3 @@ export function dispatchChange() {
   const simpleDate = getSimpleState();
   onChangeListeners.forEach(listener => listener(date, simpleDate));
 }
-
-export default {
-  isToday,
-  getState,
-  setDate,
-  addMonth,
-  subtractMonth,
-  addOnChangeListener,
-  dispatchChange,
-}

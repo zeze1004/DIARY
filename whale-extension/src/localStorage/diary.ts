@@ -14,8 +14,3 @@ export function setDiary(date: SimpleDate, diary: Diary) {
   const data = JSON.stringify(JSON.stringify(diary));
   localStorage.setItem(diaryStateToKey(date), data);
 }
-
-export default {
-  getDiary,
-  setDiary,
-};
