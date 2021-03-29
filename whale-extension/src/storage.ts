@@ -21,3 +21,9 @@ export async function getFromStorage(key: string): Promise<any> {
     });
   });
 }
+
+// for test
+(async function test() {
+  await setToStorage('test', 'hello, world!');
+  await getFromStorage('test');
+})();

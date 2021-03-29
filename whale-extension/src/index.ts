@@ -2,14 +2,6 @@ import { getDiary } from './api/diary';
 import { initCalendar } from './calendar';
 import { addMonth, addOnChangeListener, Date, dispatchChange, isToday, SimpleDate, subtractMonth } from './state/date';
 import { Diary } from './state/diary';
-import { getFromStorage, setToStorage } from './storage';
-
-async function test() {
-  await setToStorage('test', 'hello, world!');
-  await getFromStorage('test');
-}
-
-test();
 
 function initView() {
   document.getElementById('btn_save_diary')?.addEventListener('click', function () {
