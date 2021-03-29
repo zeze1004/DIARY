@@ -1,5 +1,5 @@
-import * as DateState from "../state/date";
-import * as DiaryState from "../state/diary";
+import * as DateState from "@state/date";
+import * as DiaryState from "@state/diary";
 
 async function getDiary({ year, month }: { year: number, month: number }): Promise<DiaryState.Diary[]> {
   console.log(`getDiary(${year}, ${month})`);

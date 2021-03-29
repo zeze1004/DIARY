@@ -1,6 +1,6 @@
 import { initCalendar } from './calendar';
-import * as DateState from './state/date';
-import * as DiaryState from './state/diary';
+import * as DateState from '@state/date';
+import * as DiaryState from '@state/diary';
 import { getFromStorage, setToStorage } from './storage';
 
 async function test() {

@@ -1,4 +1,5 @@
-import * as API from "../api/diary";
+import API from "@api/diary";
+import LocalStorage from '@localStorage/diary';
 import * as DateState from "./date";
 
 interface Diary {

@@ -1,5 +1,5 @@
-import { getDiary } from './api/diary';
-import * as DateState from './state/date';
+import { getDiary } from '@state/diary';
+import * as DateState from '@state/date';
 
 const emptyCells: HTMLElement[] = [];
 const dateCells: HTMLElement[] = [];
