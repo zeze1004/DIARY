@@ -208,6 +208,10 @@ footer {
   width: calc(100% / 7);
 }
 
+.calendar_cell[data-date] {
+  cursor: pointer;
+}
+
 .calendar_cell[data-selected="true"] {
   color: #414141;
 }
