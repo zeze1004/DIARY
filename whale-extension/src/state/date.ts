@@ -44,12 +44,13 @@ export function setDate(newDate: number) {
 }
 
 export function addMonth() {
-  date = date.add(1, 'month');
+  date = date.add(1, 'month').date(1);
   dispatchChange();
 }
 
 export function subtractMonth() {
   date = date.subtract(1, 'month');
+  date = date.date(date.daysInMonth());
   dispatchChange();
 }
 
