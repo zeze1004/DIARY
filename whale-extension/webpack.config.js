@@ -8,6 +8,12 @@ module.exports = {
     path: path.resolve(__dirname, 'dist'),
   },
   resolve: {
+    alias: {
+      '@': path.resolve(__dirname, 'src/'),
+      '@api': path.resolve(__dirname, 'src/api/'),
+      '@localStorage': path.resolve(__dirname, 'src/localStorage/'),
+      '@state': path.resolve(__dirname, 'src/state/'),
+    },
     extensions: ['.ts', '.js'],
   },
   module: {
