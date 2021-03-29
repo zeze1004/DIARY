@@ -61,7 +61,9 @@ const updateCalendar: DateState.ChangeListener = async date => {
   const calendarTitleElement = document.getElementById('calendar_title') as HTMLElement;
   calendarTitleElement.innerHTML = date.format('MMMM YYYY');
 
-  const diaries = await getDiary({ year, month });
+  const diaries = await Promise.all(
+    Array(daysInMonth).fill(null).map((_, i) => getDiary({ year, month, date: i + 1 }))
+  );
   dateCells.slice(0, diaries.length).map((cell, index) => {
     cell.dataset.feelings = diaries[index].feelings.toString();
   });

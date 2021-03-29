@@ -1,37 +1,36 @@
 import * as DateState from "@state/date";
 import * as DiaryState from "@state/diary";
 
-async function getDiary({ year, month }: { year: number, month: number }): Promise<DiaryState.Diary[]> {
-  console.log(`getDiary(${year}, ${month})`);
+export async function getDiary(date: DateState.SimpleDate): Promise<DiaryState.Diary> {
+  console.log(`getDiary(${date.year}, ${date.month})`);
 
-  const daysInMonth = DateState.getState().daysInMonth();
-  const diaries = Array(daysInMonth).fill(null).map((_, i) => ({
-      unixTimestamp: Number(new Date()),
-      title: 'test',
-      content: 'test',
-      feelings: i % 4,
-    } as DiaryState.Diary));
+  const diary = {
+    unixTimestamp: Number(new Date()),
+    title: 'test',
+    content: 'test',
+    feelings: Math.floor(Math.random() * 4) % 4,
+  }
 
-  return diaries;
+  return diary;
 }
 
-function createDiary() {
+export function createDiary() {
   return;
 }
 
-function updateDiary() {
+export function updateDiary() {
   return;
 }
 
-function deleteDiary() {
+export function deleteDiary() {
   return;
 }
 
-function getRandomDiary() {
+export function getRandomDiary() {
   return;
 }
 
-export {
+export default {
   getDiary,
   createDiary,
   updateDiary,

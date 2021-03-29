@@ -14,7 +14,6 @@ function initView() {
   document.getElementById('btn_save_diary')?.addEventListener('click', function () {
     const title = (document.getElementById('diary_title') as HTMLInputElement).value;
     const content = (document.getElementById('diary_content') as HTMLInputElement).value;
-    console.log(title, content);
   });
 
   // init buttons
@@ -23,9 +22,9 @@ function initView() {
   DateState.addOnChangeListener(setDiaryView);
 }
 
-function setDiaryView(date: DateState.Date) {
+async function setDiaryView(date: DateState.Date, simpleDate: DateState.SimpleDate) {
   const isToday: boolean = DateState.isToday(date);
-  const diary: DiaryState.Diary = DiaryState.getDiary(date.date());
+  const diary: DiaryState.Diary = await DiaryState.getDiary(simpleDate);
 
   const diaryEditorView = document.getElementById('diary_editor_view') as HTMLElement;
   const diaryTitle = document.getElementById('diary_title') as HTMLInputElement;

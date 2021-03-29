@@ -5,8 +5,13 @@ import 'dayjs/locale/ko';
 dayjs.locale('ko');
 
 // declare types
+type SimpleDate = {
+  year: number;
+  month: number;
+  date: number;
+};
 type Date = dayjs.Dayjs;
-type ChangeListener = (date: Date) => any;
+type ChangeListener = (date: Date, simpleDate: SimpleDate) => any;
 
 // change listeners
 const onChangeListeners: ChangeListener[] = [];
@@ -22,6 +27,15 @@ function isToday(date: Date) {
 
 function getState() {
   return date.clone();
+}
+
+function getSimpleState() {
+  const state = getState();
+  return {
+    year: state.year(),
+    month: state.month(),
+    date: state.date(),
+  } as SimpleDate;
 }
 
 function setDate(newDate: number) {
@@ -44,11 +58,13 @@ function addOnChangeListener(listener: ChangeListener) {
 }
 
 function dispatchChange() {
-  const clone = date.clone();
-  onChangeListeners.forEach(listener => listener(clone));
+  const date = getState();
+  const simpleDate = getSimpleState();
+  onChangeListeners.forEach(listener => listener(date, simpleDate));
 }
 
 export {
+  SimpleDate,
   Date,
   ChangeListener,
   isToday,
