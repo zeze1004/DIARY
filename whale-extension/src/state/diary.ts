@@ -2,7 +2,7 @@ import API from "@api/diary";
 import LocalStorage from '@localStorage/diary';
 import * as DateState from "./date";
 
-interface Diary {
+export interface Diary {
   unixTimestamp: number;
   title: string;
   content: string;
@@ -11,18 +11,18 @@ interface Diary {
 }
 
 // declare types
-type ChangeListener = (diaries: Diary[]) => any;
+// type ChangeListener = (diaries: Diary[]) => any;
 
 // change listeners
-const onChangeListeners: ChangeListener[] = [];
+// const onChangeListeners: ChangeListener[] = [];
 
-async function getDiary(date: DateState.SimpleDate) {
+export async function getDiary(date: DateState.SimpleDate) {
   const diaryFromAPI = await API.getDiary(date);
   const diaryFromLocalStorage = await LocalStorage.getDiary(date);
   return diaryFromLocalStorage;
 }
 
-async function setDiary(date: DateState.SimpleDate, diary: Diary) {
+export async function setDiary(date: DateState.SimpleDate, diary: Diary) {
   await LocalStorage.setDiary(date, diary);
   // 
   // dispatchChange();
@@ -37,9 +37,8 @@ async function setDiary(date: DateState.SimpleDate, diary: Diary) {
 //   onChangeListeners.forEach(listener => listener(clone));
 // }
 
-export {
-  Diary,
-  ChangeListener,
+export default {
+  // ChangeListener,
   getDiary,
   setDiary,
   // addOnChangeListener,
