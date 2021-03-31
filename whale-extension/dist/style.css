@@ -226,16 +226,16 @@ footer {
   width: 5px;
 }
 
-.calendar_cell[data-feelings="0"] .dot {
+.calendar_cell[data-feeling="0"] .dot, #btn_diary_feeling[data-feeling="0"] {
   background-color: #f87453;
 }
-.calendar_cell[data-feelings="1"] .dot {
+.calendar_cell[data-feeling="1"] .dot, #btn_diary_feeling[data-feeling="1"] {
   background-color: #eca100;
 }
-.calendar_cell[data-feelings="2"] .dot {
+.calendar_cell[data-feeling="2"] .dot, #btn_diary_feeling[data-feeling="2"] {
   background-color: #0ccc4c;
 }
-.calendar_cell[data-feelings="3"] .dot {
+.calendar_cell[data-feeling="3"] .dot, #btn_diary_feeling[data-feeling="3"] {
   background-color: #2991f1;
 }
 
@@ -250,18 +250,27 @@ footer {
 
 #diary_editor_view {
   display: flex;
-  flex-direction: column;
   height: 100%;
+  flex-wrap: wrap;
 }
 
-#diary_editor_view > * {
-  margin-bottom: 0.2em;
+#btn_diary_feeling {
+  background-color: #ffffff;
+  border: none;
+  border-radius: 100%;
+  box-shadow: 0px 1px 2px 2px rgba(0, 0, 0, .1);
+  order: 0;
+  height: 2em;
+  margin: auto 0;
+  overflow: hidden;
+  transition: background-color 0.2s ease;
+  width: 2em;
 }
 
 #diary_title {
   font-size: 1.25em;
   flex-grow: 1;
-  margin-right: 0.5em;
+  margin: 0 0.5em;
 }
 
 #btn_save_diary {
@@ -284,6 +293,10 @@ footer {
 
 #btn_save_diary:disabled {
   background-color: #cccccc;
+}
+
+#diary_content {
+  margin-top: 0.5em;
 }
 
 input, textarea {

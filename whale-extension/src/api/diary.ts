@@ -9,7 +9,7 @@ async function getDiary(date: Date): Promise<Diary> {
     date: formatted,
     title: 'test',
     content: 'test',
-    feelings: Math.floor(Math.random() * 4) % 4,
+    feeling: Math.floor(Math.random() * 4) % 4,
   };
 
   return diary;

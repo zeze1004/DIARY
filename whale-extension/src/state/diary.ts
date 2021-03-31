@@ -8,7 +8,7 @@ export interface Diary {
   title: string;
   content: string;
   /** 0 ~ 3 */
-  feelings: number;
+  feeling: number;
 }
 
 // declare types
