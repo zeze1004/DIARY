@@ -23,23 +23,29 @@ function initView() {
 
 async function setDiaryView(date: Date) {
   const diary: Diary = await getDiary(date);
+  const diaryEditable = isToday(date);
 
+  const btnSaveDiary = document.getElementById('btn_save_diary') as HTMLInputElement;
   const diaryEditorView = document.getElementById('diary_editor_view') as HTMLElement;
   const diaryTitle = document.getElementById('diary_title') as HTMLInputElement;
-  const diaryDate = document.getElementById('diary_date') as HTMLElement;
+  const footer = document.getElementById('footer') as HTMLElement;
   const diaryContent = document.getElementById('diary_content') as HTMLInputElement;
   const emptyView = document.getElementById('empty_view') as HTMLElement;
 
-  if (diary || isToday(date)) {
-    diaryTitle.value = diary?.title || '';
-    diaryDate.innerHTML = date.format('YYYY-MM-DD');
-    diaryContent.value = diary?.content || '';
+  diaryTitle.value = diary?.title || '';
+  diaryContent.value = diary?.content || '';
+  footer.innerHTML = date.format('YYYY-MM-DD');
 
-    diaryEditorView.classList.remove('d-none');
-    emptyView.classList.add('d-none');
-  } else {
+  btnSaveDiary.disabled = diaryTitle.disabled = diaryContent.disabled = !diaryEditable;
+
+  // show/hide editor
+  if (!diary && !diaryEditable) {
+    // no diary
     diaryEditorView.classList.add('d-none');
     emptyView.classList.remove('d-none');
+  } else {
+    diaryEditorView.classList.remove('d-none');
+    emptyView.classList.add('d-none');
   }
 }
 

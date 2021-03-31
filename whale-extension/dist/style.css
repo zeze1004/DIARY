@@ -303,6 +303,9 @@ textarea {
 input:focus, textarea:focus {
   background-color: #F3F3F7;
 }
+input:disabled, textarea:disabled {
+  background-color: transparent;
+}
 
 input::placeholder, textarea::placeholder {
   color: #BABABA;
