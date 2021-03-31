@@ -305,7 +305,7 @@ input, textarea {
   color: inherit;
   outline: none;
   overflow: hidden;
-  padding: 0.5em;
+  padding: 0.625rem;
   transition: background-color 0.27s ease;
 }
 
