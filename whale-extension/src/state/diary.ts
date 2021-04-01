@@ -5,7 +5,6 @@ import { Date } from "./date";
 export interface Diary {
   /** YYMMDD */
   date: string;
-  title: string;
   content: string;
   /** 0 ~ 3 */
   feeling: number;
