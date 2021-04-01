@@ -1,11 +1,13 @@
 /* eslint-disable prefer-const */
 
+import { Date } from "@/state/date";
+
 // API LIST
 export enum API {
   GET_DIARY,
+  GET_ALL_DIARIES,
   CREATE_DIARY,
   UPDATE_DIARY,
-  DELETE_DIARY,
   GET_RANDOM_DIARY,
 }
 
@@ -17,7 +19,7 @@ const DELETE = 'DELETE';
 
 const API_URL_BASE = '/api';
 
-function getURLAndRequestInit(api: API, body: any = {}): { url: RequestInfo, requestInit: RequestInit } {
+function getURLAndRequestInit(api: API, body: any = {}, date?: string): { url: RequestInfo, requestInit: RequestInit } {
   let path: string;
   let method = 'GET'; // *GET, POST, PUT, DELETE, etc.
   let mode: RequestMode = 'cors'; // no-cors, *cors, same-origin
@@ -32,7 +34,27 @@ function getURLAndRequestInit(api: API, body: any = {}): { url: RequestInfo, req
 
   switch (api) {
     case API.GET_DIARY:
-      path = '/diary';
+      path = `/diary/${date}`;
+      method = GET;
+      break;
+
+    case API.GET_ALL_DIARIES:
+      path = `/diary/all`;
+      method = GET;
+      break;
+
+    case API.CREATE_DIARY:
+      path = `/diary`;
+      method = POST;
+      break;
+
+    case API.UPDATE_DIARY:
+      path = `/diary${date}`;
+      method = PUT;
+      break;
+
+    case API.GET_RANDOM_DIARY:
+      path = `/diary/happy`;
       method = GET;
       break;
 
@@ -55,8 +77,8 @@ function getURLAndRequestInit(api: API, body: any = {}): { url: RequestInfo, req
   };
 }
 
-export async function requestAPI(api: API, body: any) {
-  const { url, requestInit } = getURLAndRequestInit(api, body);
+export async function requestAPI(api: API, body: any = {}, date?: Date) {
+  const { url, requestInit } = getURLAndRequestInit(api, body, date?.format('YYMMDD'));
 
   try {
     const response = await fetch(url, requestInit);

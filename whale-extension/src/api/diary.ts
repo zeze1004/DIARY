@@ -1,40 +1,34 @@
 import { Date } from "@state/date";
 import { Diary } from "@state/diary";
+import { API, requestAPI } from ".";
 
 async function getDiary(date: Date): Promise<Diary> {
-  const formatted = date.format('YYMMDD');
-  console.log(`getDiary(${formatted})`);
-
-  const diary = {
-    date: formatted,
-    title: 'test',
-    content: 'test',
-    feeling: Math.floor(Math.random() * 4) % 4,
-  };
-
+  const diary = await requestAPI(API.GET_DIARY, null, date);
   return diary;
 }
 
-function createDiary() {
-  return;
+async function getAllDiaries(): Promise<Diary[]> {
+  const diaries = await requestAPI(API.GET_ALL_DIARIES);
+  return diaries;
 }
 
-function updateDiary() {
-  return;
+async function createDiary(diary: Diary): Promise<void> {
+  await requestAPI(API.CREATE_DIARY, diary);
 }
 
-function deleteDiary() {
-  return;
+async function updateDiary(diary: Diary): Promise<void> {
+  await requestAPI(API.UPDATE_DIARY, diary);
 }
 
-function getRandomDiary() {
-  return;
+async function getRandomDiary() {
+  const diary = await requestAPI(API.GET_RANDOM_DIARY);
+  return diary;
 }
 
 export default {
   getDiary,
+  getAllDiaries,
   createDiary,
   updateDiary,
-  deleteDiary,
   getRandomDiary,
 };
