@@ -1,6 +1,8 @@
 package com.ssonobackend.diarybackend.domain;
 
 import com.ssonobackend.diarybackend.BaseTimeEntity;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -11,12 +13,13 @@ import javax.persistence.*;
 
 @Entity(name = "JOURNAL")
 @Data
-//@AllArgsConstructor
+@ApiModel
 @NoArgsConstructor
 // BaseTimeEntity 추상클래스 아이콘으로 안 바뀐 상태 ~
 public class Journal extends BaseTimeEntity {
     @Id
     @Column(name = "DATE")
+    @ApiModelProperty(value = "날짜")
     //@GeneratedValue(generator = "uuid")
     //@GenericGenerator(name = "uuid", strategy = "uuid2")
     private Long date;

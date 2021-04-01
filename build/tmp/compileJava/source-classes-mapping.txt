@@ -1,37 +1,37 @@
-com/ssonobackend/diarybackend/service/JournalServicempl.java
- com.ssonobackend.diarybackend.service.JournalServicempl
+com/ssonobackend/diarybackend/repository/MemberRepository.java
+ com.ssonobackend.diarybackend.repository.MemberRepository
 com/ssonobackend/diarybackend/SwaggerConfig.java
  com.ssonobackend.diarybackend.SwaggerConfig
-com/ssonobackend/diarybackend/repository/JournalRepository.java
- com.ssonobackend.diarybackend.repository.JournalRepository
-com/ssonobackend/diarybackend/domain/Journal.java
- com.ssonobackend.diarybackend.domain.Journal
- com.ssonobackend.diarybackend.domain.Journal$JournalBuilder
+com/ssonobackend/diarybackend/repository/PostRepository.java
+ com.ssonobackend.diarybackend.repository.PostRepository
+com/ssonobackend/diarybackend/DiaryBackendApplication.java
+ com.ssonobackend.diarybackend.DiaryBackendApplication
 com/ssonobackend/diarybackend/service/MemberService.java
  com.ssonobackend.diarybackend.service.MemberService
+com/ssonobackend/diarybackend/domain/Member.java
+ com.ssonobackend.diarybackend.domain.Member
 com/ssonobackend/diarybackend/domain/dto/PostsUpdateRequestDto.java
  com.ssonobackend.diarybackend.domain.dto.PostsUpdateRequestDto
  com.ssonobackend.diarybackend.domain.dto.PostsUpdateRequestDto$PostsUpdateRequestDtoBuilder
-com/ssonobackend/diarybackend/domain/Member.java
- com.ssonobackend.diarybackend.domain.Member
-com/ssonobackend/diarybackend/service/PostsService.java
- com.ssonobackend.diarybackend.service.PostsService
+com/ssonobackend/diarybackend/BaseTimeEntity.java
+ com.ssonobackend.diarybackend.BaseTimeEntity
 com/ssonobackend/diarybackend/domain/dto/PostsSaveRequestDto.java
  com.ssonobackend.diarybackend.domain.dto.PostsSaveRequestDto
  com.ssonobackend.diarybackend.domain.dto.PostsSaveRequestDto$PostsSaveRequestDtoBuilder
-com/ssonobackend/diarybackend/DiaryBackendApplication.java
- com.ssonobackend.diarybackend.DiaryBackendApplication
+com/ssonobackend/diarybackend/service/JournalServicempl.java
+ com.ssonobackend.diarybackend.service.JournalServicempl
 com/ssonobackend/diarybackend/controller/PostsApiController.java
  com.ssonobackend.diarybackend.controller.PostsApiController
 com/ssonobackend/diarybackend/service/JournalService.java
  com.ssonobackend.diarybackend.service.JournalService
 com/ssonobackend/diarybackend/domain/dto/PostsResponseDto.java
  com.ssonobackend.diarybackend.domain.dto.PostsResponseDto
+com/ssonobackend/diarybackend/repository/JournalRepository.java
+ com.ssonobackend.diarybackend.repository.JournalRepository
 com/ssonobackend/diarybackend/controller/JournalApiController.java
  com.ssonobackend.diarybackend.controller.JournalApiController
-com/ssonobackend/diarybackend/repository/PostRepository.java
- com.ssonobackend.diarybackend.repository.PostRepository
-com/ssonobackend/diarybackend/repository/MemberRepository.java
- com.ssonobackend.diarybackend.repository.MemberRepository
-com/ssonobackend/diarybackend/BaseTimeEntity.java
- com.ssonobackend.diarybackend.BaseTimeEntity
+com/ssonobackend/diarybackend/domain/Journal.java
+ com.ssonobackend.diarybackend.domain.Journal
+ com.ssonobackend.diarybackend.domain.Journal$JournalBuilder
+com/ssonobackend/diarybackend/service/PostsService.java
+ com.ssonobackend.diarybackend.service.PostsService
