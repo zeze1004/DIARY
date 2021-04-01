@@ -20,8 +20,6 @@ const onChangeListeners: ChangeListener[] = [];
 let date: Date = dayjs();
 
 export function isToday(date: Date) {
-  console.log(date.format('YYMMDD'));
-  console.log(dayjs().format('YYMMDD'));
   return date.format('YYMMDD') === dayjs().format('YYMMDD');
 }
 
