@@ -3,7 +3,7 @@ import API from "@api/diary";
 import { Date } from "./date";
 
 export interface Diary {
-  /** YYYY-MM-DD */
+  /** YYMMDD */
   date: string;
   title: string;
   content: string;

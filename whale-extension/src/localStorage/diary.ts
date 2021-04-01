@@ -2,7 +2,7 @@ import { Date } from '@state/date';
 import { Diary } from '@state/diary';
 
 function diaryStateToKey(date: Date) {
-  return date.format('YYYY-MM-DD');
+  return date.format('YYMMDD');
 }
 
 function getDiary(date: Date) {

@@ -2,7 +2,7 @@ import { Date } from "@state/date";
 import { Diary } from "@state/diary";
 
 async function getDiary(date: Date): Promise<Diary> {
-  const formatted = date.format('YYYY-MM-DD');
+  const formatted = date.format('YYMMDD');
   console.log(`getDiary(${formatted})`);
 
   const diary = {
