@@ -14,17 +14,18 @@ import java.util.List;
 
 @RestController
 public class JournalApiController {
-
+    
+    // 필드 삽입 경고
     @Autowired
     JournalService journalService;
 
-    @ApiOperation(value = "일기 조회", notes = "해당 낧짜에 작성된 일기를 조회합니다.")
+    @ApiOperation(value = "일기 조회", notes = "해당 날짜에 작성된 일기를 조회합니다.")
     @GetMapping("/diary/{date}")
     public Journal getDiary(@PathVariable("date") Long date) {
         return journalService.findByDate(date);
     }
 
-    @ApiOperation(value = "모든 일기 리스트")
+    @ApiOperation(value = "모든 일기 리스트 찾기", notes = "작성된 일기 전체를 조회합니다.")
     @GetMapping("/diary/all")
     public List<Journal> getUserProfileList() {
         return journalService.findAll();
@@ -34,11 +35,11 @@ public class JournalApiController {
     @GetMapping("/diary/happy")
     @Transactional
     public Journal getHappyDiary() {
-        List<Journal> hdiary = journalService.findByEmotion();
-        if(hdiary.isEmpty()) {
+        List<Journal> diary = journalService.findByEmotion();
+        if(diary.isEmpty()) {
             return null;
         }
-        Collections.shuffle(hdiary);
-        return hdiary.get(0);
+        Collections.shuffle(diary);
+        return diary.get(0);
     }
 }

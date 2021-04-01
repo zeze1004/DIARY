@@ -1,5 +1,7 @@
 com/ssonobackend/diarybackend/service/JournalServicempl.java
  com.ssonobackend.diarybackend.service.JournalServicempl
+com/ssonobackend/diarybackend/SwaggerConfig.java
+ com.ssonobackend.diarybackend.SwaggerConfig
 com/ssonobackend/diarybackend/repository/JournalRepository.java
  com.ssonobackend.diarybackend.repository.JournalRepository
 com/ssonobackend/diarybackend/domain/Journal.java
