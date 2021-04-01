@@ -64,7 +64,7 @@ const updateCalendar: ChangeListener = async date => {
     Array(daysInMonth).fill(null).map((_, i) => getDiary(simpleDateToDate({ year, month, date: i + 1 })))
   );
   dateCells.slice(0, diaries.length).map((cell, index) => {
-    cell.dataset.feeling = diaries[index]?.feeling.toString();
+    cell.dataset.emotion = diaries[index]?.emotion.toString();
   });
 };
 

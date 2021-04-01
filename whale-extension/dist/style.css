@@ -226,16 +226,16 @@ footer {
   width: 5px;
 }
 
-.calendar_cell[data-feeling="0"] .dot, #btn_diary_feeling[data-feeling="0"] {
+.calendar_cell[data-emotion="0"] .dot, #btn_diary_emotion[data-emotion="0"] {
   background-color: #f87453;
 }
-.calendar_cell[data-feeling="1"] .dot, #btn_diary_feeling[data-feeling="1"] {
+.calendar_cell[data-emotion="1"] .dot, #btn_diary_emotion[data-emotion="1"] {
   background-color: #eca100;
 }
-.calendar_cell[data-feeling="2"] .dot, #btn_diary_feeling[data-feeling="2"] {
+.calendar_cell[data-emotion="2"] .dot, #btn_diary_emotion[data-emotion="2"] {
   background-color: #0ccc4c;
 }
-.calendar_cell[data-feeling="3"] .dot, #btn_diary_feeling[data-feeling="3"] {
+.calendar_cell[data-emotion="3"] .dot, #btn_diary_emotion[data-emotion="3"] {
   background-color: #2991f1;
 }
 
@@ -254,7 +254,7 @@ footer {
   flex-wrap: wrap;
 }
 
-#btn_diary_feeling {
+#btn_diary_emotion {
   background-color: #ffffff;
   border: none;
   border-radius: 100%;
