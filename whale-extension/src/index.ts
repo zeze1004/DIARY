@@ -11,7 +11,7 @@ function initView() {
     const content = (document.getElementById('diary_content') as HTMLInputElement).value;
 
     setDiary(getDate(), {
-      date: getDate().format('YYYY-MM-DD'),
+      date: getDate().format('YYMMDD'),
       title,
       content,
       feeling: parseInt(btnDiaryFeeling.dataset.feeling || '3'),
