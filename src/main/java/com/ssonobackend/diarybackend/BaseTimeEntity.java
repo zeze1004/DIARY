@@ -10,15 +10,15 @@ import javax.persistence.MappedSuperclass;
 import java.time.LocalDateTime;
 import lombok.Getter;
 
-@Getter
-@Data
-@MappedSuperclass
-@EntityListeners(AuditingEntityListener.class)
-
-public class BaseTimeEntity {
-    @CreatedDate
-    private LocalDateTime createdDate;
-
-    @LastModifiedDate
-    private LocalDateTime modifiedDate;
-}
+//@Getter
+//@Data
+//@MappedSuperclass
+//@EntityListeners(AuditingEntityListener.class)
+//
+//public class BaseTimeEntity {
+//    @CreatedDate
+//    private LocalDateTime createdDate;
+//
+//    @LastModifiedDate
+//    private LocalDateTime modifiedDate;
+//}

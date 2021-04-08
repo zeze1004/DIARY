@@ -1,6 +1,5 @@
 package com.ssonobackend.diarybackend.domain;
 
-import com.ssonobackend.diarybackend.BaseTimeEntity;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -13,8 +12,7 @@ import javax.persistence.*;
 @Data
 //@AllArgsConstructor
 @NoArgsConstructor
-// BaseTimeEntity 추상클래스 아이콘으로 안 바뀐 상태 ~
-public class Journal extends BaseTimeEntity {
+public class Journal  {
     @Id
     @Column(name = "DATE")
     //@GeneratedValue(generator = "uuid")

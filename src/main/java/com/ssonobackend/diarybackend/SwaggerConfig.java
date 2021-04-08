@@ -12,9 +12,9 @@ public class SwaggerConfig {
     @Bean
     public Docket api() {
         return new Docket(DocumentationType.SWAGGER_2)
-                .apiInfo(apiInfo()) //기본정보
+                .apiInfo(apiInfo()) // 기본정보
                 .select()
-                .apis(RequestHandlerSelectors.any())  //주소접근 옵션
+                .apis(RequestHandlerSelectors.any())  // 주소접근 옵션
                 .paths(PathSelectors.any())
                 .build();
     }
