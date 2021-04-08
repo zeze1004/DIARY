@@ -8,6 +8,6 @@ import java.util.List;
 @Service
 public interface JournalService {
     List<Journal> findAll();
-    List<Journal> findByEmotion();
+    List<Journal> findByEmotion(String emotion);
     Journal findByDate(Long date);
 }

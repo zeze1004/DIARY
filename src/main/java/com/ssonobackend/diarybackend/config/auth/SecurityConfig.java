@@ -18,9 +18,10 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .csrf().disable()
                 .headers().frameOptions().disable()
                 .and()
+                // Role 별 접근 권한 지정
                 .authorizeRequests()
-//                .antMatchers("/", "/css/**", "/images/**", "/js/**", "/h2-console/**", "/profile").permitAll()
-//                .antMatchers("/api/v1/**").hasRole(Role.MEMBER.name())
+//                .antMatchers("/" ,"/**").permitAll()                 // 모든 Role이 접근 가능
+//                .antMatchers("/admin/**").hasRole(Role.ADMIN.name()) // 관리자만 들어갈 수 있는 uri
                 .anyRequest().authenticated()
                 .and()
                 .logout()

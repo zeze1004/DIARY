@@ -23,7 +23,7 @@ public class Journal  {
     private String contents;
 
     @Column(name = "EMOTION")
-    private String emotion; //숫자로
+    private String emotion; // 숫자로
 
     @Builder
     public Journal(String contents, String emotion, Long date) {

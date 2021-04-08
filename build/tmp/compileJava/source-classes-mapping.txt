@@ -2,8 +2,8 @@ com/ssonobackend/diarybackend/service/JournalServicempl.java
  com.ssonobackend.diarybackend.service.JournalServicempl
 com/ssonobackend/diarybackend/config/auth/dto/SessionUser.java
  com.ssonobackend.diarybackend.config.auth.dto.SessionUser
-com/ssonobackend/diarybackend/repository/MemberRepository.java
- com.ssonobackend.diarybackend.repository.MemberRepository
+com/ssonobackend/diarybackend/SwaggerConfig.java
+ com.ssonobackend.diarybackend.SwaggerConfig
 com/ssonobackend/diarybackend/repository/JournalRepository.java
  com.ssonobackend.diarybackend.repository.JournalRepository
 com/ssonobackend/diarybackend/config/auth/CustomOAuth2UserService.java
@@ -26,8 +26,8 @@ com/ssonobackend/diarybackend/domain/dto/PostsSaveRequestDto.java
  com.ssonobackend.diarybackend.domain.dto.PostsSaveRequestDto$PostsSaveRequestDtoBuilder
 com/ssonobackend/diarybackend/DiaryBackendApplication.java
  com.ssonobackend.diarybackend.DiaryBackendApplication
-com/ssonobackend/diarybackend/repository/PostRepository.java
- com.ssonobackend.diarybackend.repository.PostRepository
+com/ssonobackend/diarybackend/controller/PostsApiController.java
+ com.ssonobackend.diarybackend.controller.PostsApiController
 com/ssonobackend/diarybackend/config/auth/dto/OAuthAttributes.java
  com.ssonobackend.diarybackend.config.auth.dto.OAuthAttributes
  com.ssonobackend.diarybackend.config.auth.dto.OAuthAttributes$OAuthAttributesBuilder
@@ -37,9 +37,9 @@ com/ssonobackend/diarybackend/domain/dto/PostsResponseDto.java
  com.ssonobackend.diarybackend.domain.dto.PostsResponseDto
 com/ssonobackend/diarybackend/controller/JournalApiController.java
  com.ssonobackend.diarybackend.controller.JournalApiController
-com/ssonobackend/diarybackend/controller/PostsApiController.java
- com.ssonobackend.diarybackend.controller.PostsApiController
-com/ssonobackend/diarybackend/SwaggerConfig.java
- com.ssonobackend.diarybackend.SwaggerConfig
+com/ssonobackend/diarybackend/repository/PostRepository.java
+ com.ssonobackend.diarybackend.repository.PostRepository
+com/ssonobackend/diarybackend/repository/MemberRepository.java
+ com.ssonobackend.diarybackend.repository.MemberRepository
 com/ssonobackend/diarybackend/config/auth/SecurityConfig.java
  com.ssonobackend.diarybackend.config.auth.SecurityConfig

@@ -35,7 +35,7 @@ public class JournalApiController {
     @GetMapping("/diary/happy")
     @Transactional
     public Journal getHappyDiary() {
-        List<Journal> diary = journalService.findByEmotion();
+        List<Journal> diary = journalService.findByEmotion("1");
         if(diary.isEmpty()) {
             return null;
         }

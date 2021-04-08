@@ -11,24 +11,26 @@
       <change beforePath="$PROJECT_DIR$/.gradle/6.7.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.7.1/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.7.1/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.7.1/javaCompile/classAnalysis.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.7.1/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.7.1/javaCompile/javaCompile.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.7.1/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.7.1/javaCompile/taskHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/ssonobackend/diarybackend/config/auth/CustomOAuth2UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/ssonobackend/diarybackend/config/auth/CustomOAuth2UserService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/ssonobackend/diarybackend/config/auth/SecurityConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/ssonobackend/diarybackend/config/auth/SecurityConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/ssonobackend/diarybackend/controller/PostsApiController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/ssonobackend/diarybackend/controller/PostsApiController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/ssonobackend/diarybackend/config/auth/dto/OAuthAttributes.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/ssonobackend/diarybackend/config/auth/dto/OAuthAttributes.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/ssonobackend/diarybackend/controller/JournalApiController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/ssonobackend/diarybackend/controller/JournalApiController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/ssonobackend/diarybackend/domain/Member$MemberBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/ssonobackend/diarybackend/domain/Member$MemberBuilder.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/ssonobackend/diarybackend/domain/Member.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/ssonobackend/diarybackend/domain/Member.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/ssonobackend/diarybackend/domain/Role.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/ssonobackend/diarybackend/domain/Role.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/source-classes-mapping.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileJava/source-classes-mapping.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ssonobackend/diarybackend/BaseTimeEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ssonobackend/diarybackend/BaseTimeEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ssonobackend/diarybackend/SwaggerConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ssonobackend/diarybackend/SwaggerConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ssonobackend/diarybackend/config/auth/CustomOAuth2UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ssonobackend/diarybackend/config/auth/CustomOAuth2UserService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/ssonobackend/diarybackend/config/auth/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ssonobackend/diarybackend/config/auth/SecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ssonobackend/diarybackend/controller/PostsApiController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ssonobackend/diarybackend/controller/PostsApiController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ssonobackend/diarybackend/config/auth/dto/OAuthAttributes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ssonobackend/diarybackend/config/auth/dto/OAuthAttributes.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ssonobackend/diarybackend/controller/JournalApiController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ssonobackend/diarybackend/controller/JournalApiController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/ssonobackend/diarybackend/domain/Journal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ssonobackend/diarybackend/domain/Journal.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/ssonobackend/diarybackend/domain/Member.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ssonobackend/diarybackend/domain/Member.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ssonobackend/diarybackend/repository/MemberRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ssonobackend/diarybackend/repository/MemberRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ssonobackend/diarybackend/domain/Role.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ssonobackend/diarybackend/domain/Role.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ssonobackend/diarybackend/service/JournalService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ssonobackend/diarybackend/service/JournalService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ssonobackend/diarybackend/service/JournalServicempl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ssonobackend/diarybackend/service/JournalServicempl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application-oauth.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application-oauth.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -187,7 +189,7 @@
       <workItem from="1617720390915" duration="994000" />
       <workItem from="1617871518087" duration="7892000" />
       <workItem from="1617880054875" duration="9000" />
-      <workItem from="1617892313232" duration="6060000" />
+      <workItem from="1617892313232" duration="11866000" />
     </task>
     <task id="LOCAL-00001" summary="frontend 병합">
       <created>1612597495167</created>

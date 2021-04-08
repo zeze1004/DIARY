@@ -21,7 +21,7 @@ public class JournalServicempl implements JournalService {
     }
 
     @Override
-    public List<Journal> findByEmotion() {
+    public List<Journal> findByEmotion(String emotion) {
         return journalRepository.findByEmotion("1").collect(Collectors.toList());
     }
 

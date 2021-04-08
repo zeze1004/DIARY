@@ -35,7 +35,8 @@ public class CustomOAuth2UserService  implements OAuth2UserService<OAuth2UserReq
         OAuthAttributes attributes = OAuthAttributes.of(userNameAttributedName, oAuth2User.getAttributes());
 
         Member member = saveOrUpdate(attributes);
-        //SessionUser : 세션에 사용자 정보를 담기위한 Dto, User 클래스보다 좋음
+        // SessionUser : 세션에 사용자 정보를 담기위한 Dto
+        // Member 클래스에 세션 정보를 담지 않는 이유는 Member는 엔티티므로 다른 엔티티와 관계를 가질시 성능 이슈가 발생할 수 있기 때문
         httpSession.setAttribute("member", new SessionUser(member));
 
 
