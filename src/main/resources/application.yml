@@ -13,5 +13,8 @@ spring:
       format_sql: true
   session:
     store-type: jdbc
+  profiles:
+    include: oauth
+
 logging.level:
   org.hibernate.SQL: debug

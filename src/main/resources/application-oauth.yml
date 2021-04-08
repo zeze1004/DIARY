@@ -9,9 +9,9 @@ spring:
             client-secret: joivb1qtwm
             # yaml 에서는 / (슬러시)를 그대로 쓰면 파싱 에러가 난다. 따옴표나 작은 따옴표로 감싸야함
             # redirect-url 이 아니고 redirect-uri
-            redirect-uri: http://localhost:8080/callback
+            redirect-uri: http://localhost:8080/login/oauth2/code/naver
             authorization-grant-type: authorization_code
-            scope: name,email
+            scope: name, email
             client-name: Naver
         provider:
           naver:

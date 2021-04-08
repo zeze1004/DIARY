@@ -1,5 +1,4 @@
-<<<<<<< HEAD
-application-oauth.yml
+
 =======
 .gradle
 /build/
@@ -18,3 +17,5 @@ gradle-app.setting
 
 .DS_Store
 >>>>>>> b4b8ffec4322b97a4c627e948855404bef2f9580
+
+*.yml

@@ -22,7 +22,7 @@ public class OAuthAttributes {
         this.email = email;
     }
 
-    // of() : OAuth2User에서 반환하는 사용자 정보는 Map이기 때문에 값 하나하나를 변환.
+    // of() : OAuth2User에서 반환하는 사용자 정보는 Map이기 때문에 값 하나하나 변환
     public static OAuthAttributes of(String userNameAttributeName, Map<String, Object> attributes) {
             return ofNaver("id", attributes);
     }
