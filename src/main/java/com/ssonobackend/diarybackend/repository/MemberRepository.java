@@ -1,33 +1,12 @@
 package com.ssonobackend.diarybackend.repository;
 
 import com.ssonobackend.diarybackend.domain.Member;
-import lombok.RequiredArgsConstructor;
-import org.springframework.stereotype.Repository;
 
-import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
-import java.util.List;
+import java.util.Optional;
+import org.springframework.data.jpa.repository.JpaRepository;
 
-@Repository
-@RequiredArgsConstructor
-public class MemberRepository {
-    @PersistenceContext
-    private final EntityManager em;
 
-    public void save(Member member) {
-        em.persist(member);
-    }
-    public Member findOne(Long id) {
-        return em.find(Member.class, id);
-    }
-    public List<Member> findAll() {
-        return em.createQuery("select m from Member m", Member.class)
-                .getResultList();
-    }
-    public List<Member> findByName(String name) {
-        return em.createQuery("select m from Member m where m.name = :name",
-                Member.class)
-                .setParameter("name", name)
-                .getResultList();
-    }
+public interface MemberRepository extends JpaRepository<Member, Long> {
+    // 소셜 로그인으로 반환되는 값 중 email을 통해 이미 생성된 사용자인지 처음 가입하는 사용자인지 판단하기 위함
+    Optional<Member> findByEmail(String email);
 }

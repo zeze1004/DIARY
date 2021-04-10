@@ -11,5 +11,21 @@ spring:
       hibernate:
       # show_sql: true
       format_sql: true
+  session:
+    store-type: jdbc
+    jdbc:
+      schema: classpath:org/springframework/session/jdbc/schema-@@platform@@.sql
+      initialize-schema: embedded
+      table-name: SPRING_SESSION
+
+
+  profiles:
+    include: oauth
+
 logging.level:
   org.hibernate.SQL: debug
+
+server:
+  servlet:
+    session:
+      timeout:

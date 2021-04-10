@@ -12,11 +12,11 @@ import lombok.NoArgsConstructor;
 public class PostsSaveRequestDto {
     private Long date;
     private String contents;
-    private String emotion;
+    private Integer emotion;
 
 
     @Builder
-    public PostsSaveRequestDto(String contents, String emotion, Long date) {
+    public PostsSaveRequestDto(String contents, Integer emotion, Long date) {
         this.contents = contents;
         this.emotion = emotion;
         this.date = date;

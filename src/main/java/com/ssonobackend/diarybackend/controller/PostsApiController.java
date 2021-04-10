@@ -20,9 +20,9 @@ public class PostsApiController {
         return postsService.save(requestDto);
     }
     // 수정
-    @ApiOperation(value = "일기 등록", notes = "일기를 작성합니다.")
+    @ApiOperation(value = "일기 수정", notes = "일기를 수정합니다.")
     @PutMapping("/diary/{date}")
-    public Long update(@PathVariable Long date, @RequestBody PostsUpdateRequestDto requestDto) {
+    public Long update(@PathVariable ("date") Long date, @RequestBody PostsUpdateRequestDto requestDto) {
         return postsService.update(date, requestDto);
     }
 

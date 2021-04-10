@@ -9,11 +9,11 @@ import lombok.NoArgsConstructor;
 
 public class PostsUpdateRequestDto {
     private String contents;
-    private String emotion;
+    private Integer emotion;
     private Long date;
 
     @Builder
-    public PostsUpdateRequestDto(String contents, String emotion, Long date) {
+    public PostsUpdateRequestDto(String contents, Integer emotion, Long date) {
         this.contents = contents;
         this.emotion= emotion;
         this.date = date;

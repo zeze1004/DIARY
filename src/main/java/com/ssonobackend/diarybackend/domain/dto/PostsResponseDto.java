@@ -10,7 +10,7 @@ public class PostsResponseDto {
 
     private Long date;
     private String contents;
-    private String emotion;
+    private Integer emotion;
 
     public PostsResponseDto(Journal entity) {
         this.date = entity.getDate();
