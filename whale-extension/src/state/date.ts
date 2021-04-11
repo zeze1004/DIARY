@@ -19,8 +19,16 @@ const onChangeListeners: ChangeListener[] = [];
 // date state
 let date: Date = dayjs();
 
+export function getToday() {
+  return dayjs();
+}
+
 export function isToday(date: Date) {
   return date.format('YYMMDD') === dayjs().format('YYMMDD');
+}
+
+export function isThisMonth(date: Date) {
+  return date.format('YYYYMM') === dayjs().format('YYYYMM');
 }
 
 export function getDate() {
