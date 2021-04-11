@@ -18,7 +18,9 @@
 }
 
 body {
-  color: #414141;
+  background-color: #edeff2;
+  background-color: #e7eaed;
+  color: #45484a;
 
   font-size: 1rem;
   font-family: 'Noto Sans', 'Noto Sans KR', sans-serif;
@@ -46,10 +48,10 @@ button:not(:disabled) {
 }
 
 footer {
-  background-color: #FAFAFA;
-  color: #BFBFBF;
+  /* background-color: #FAFAFA; */
+  color: #9a9aa9;
   margin-top: auto;
-  padding: 1.5em 1em;
+  padding: 1.5em 1em 0.5em 1em;
   text-align: center;
 }
 
@@ -149,9 +151,12 @@ footer {
 }
 
 #header {
-  background-color: #1495ff;
-  box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, .35);
-  color: #FFFFFF;
+  background: linear-gradient(150deg, #e7e9ef, #f0f0f4);
+
+  /* border: 1px solid #eceef1;edeff2 */
+  /* background-color: #1495ff; */
+  /* box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, .35); */
+  /* color: #FFFFFF; */
   display: flex;
   flex-direction: column;
   user-select: none;
@@ -179,8 +184,8 @@ footer {
 }
 
 #calendar_days {
-  color: #FAFAFA;
-  background-color: #1688e6;
+  /* color: #FAFAFA; */
+  /* background-color: #1688e6; */
   display: flex;
   font-weight: 300;
   padding: 0.7em 0;
@@ -203,9 +208,13 @@ footer {
   color: #AFAFAF;
   display: flex;
   flex-direction: column;
-  overflow: hidden;
+  line-height: 1em;
+  /* overflow: hidden; */
   padding: 1.25em 0.25em;
   width: calc(100% / 7);
+  transition: color 0.15s ease;
+
+  position: relative;
 }
 
 .calendar_cell[data-date] {
@@ -213,7 +222,23 @@ footer {
 }
 
 .calendar_cell[data-selected="true"] {
-  color: #414141;
+  color: #45484a;
+}
+
+.calendar_cell[data-today="true"]::after {
+  /* background-color: #edeff2; */
+  /* background-color: #e7eaed; */
+  border: none;
+  border-radius: 10em;
+  box-shadow: 0.2em 0.2em 0.7em #c9d2e2, -0.25em -0.25em 0.5em #ffffff, inset 0.2em 0.2em 0.7em #c9d2e2, inset -0.25em -0.25em 0.5em #ffffff;
+
+  position: absolute;
+  content: '';
+  width: 2.5em;
+  height: 2.5em;
+  top: calc(50% - 1.25em - 5px);
+  left: calc(50% - 1.25em);
+  z-index: -1;
 }
 
 .calendar_cell[data-visible="false"] {
@@ -244,14 +269,14 @@ footer {
 }
 
 #diary_view {
-  border-top: 2px solid #EAEAEA;
+  /* border-top: 2px solid #d7d7da; */
   flex-grow: 1;
 }
 
 #diary_editor_view {
   display: flex;
+  flex-direction: column;
   height: 100%;
-  flex-wrap: wrap;
 }
 
 #btn_diary_emotion {
@@ -274,38 +299,46 @@ footer {
 }
 
 #btn_save_diary {
-  background-color: #1495ff;
-  border: none;
-  border-radius: 0.5em;
-  box-shadow: 0px 1px 2px 2px rgba(0, 0, 0, .1);
-  color: #FFFFFF;
+  background: linear-gradient(120deg, #a4b0ed, #d0e2ff);
+  /* border: 1px solid #c2cbfc; */
+  color: #023e8a;
   padding: 0 1em;
-  transition: background-color 0.2s ease;
-}
-
-#btn_save_diary:hover {
-  background-color: #5fb7ff;
-}
-
-#btn_save_diary:active {
-  background-color: #0481e7;
+  transition: background-color, opacity 0.2s ease;
+  position: relative;
+  z-index: 1;
 }
 
 #btn_save_diary:disabled {
-  background-color: #cccccc;
+  opacity: 0;
+}
+
+#btn_save_diary::before {
+  background: linear-gradient(120deg, #d0e2ff, #a4b0ed);
+  /* border-radius: inherit; */
+  content: '';
+  height: 100%;
+  opacity: 0;
+  position: absolute;
+  top: 0; left: 0;
+  transition: opacity 0.45s;
+  width: 100%;
+  z-index: -1;
+}
+#btn_save_diary:hover:not(:active)::before {
+  opacity: 1;
 }
 
 #diary_content {
-  margin-top: 0.5em;
+  margin-top: 1em;
 }
 
 input, textarea {
   border: none;
   border-radius: 0.375em;
-  color: inherit;
+  color: #45484a;
   outline: none;
   overflow: hidden;
-  padding: 0.625rem;
+  padding: 1.5em;
   transition: background-color 0.27s ease;
 }
 
@@ -314,7 +347,7 @@ textarea {
 }
 
 input:focus, textarea:focus {
-  background-color: #F3F3F7;
+  /* background-color: #F3F3F7; */
 }
 input:disabled, textarea:disabled {
   background-color: transparent;
@@ -324,10 +357,53 @@ input::placeholder, textarea::placeholder {
   color: #BABABA;
 }
 
+select {
+  border-radius: 0.5em;
+  color: #45484a;
+  cursor: pointer;
+  outline: none;
+  padding: 0.5em 1em;
+  transition: box-shadow 0.27s ease;
+}
+select:disabled {
+  box-shadow: none !important;
+}
+
 #empty_view {
   align-items: center;
-  color: #BABABA;
+  color: #9a9aa9;
   display: flex;
   height: 100%;
   justify-content: center;
+}
+
+.neumorphism {
+  background-color: #edeff2;
+  background-color: #e7eaed;
+  /* border: 1px solid rgba(255, 255, 255, 0.2); */
+  border: none;
+  /* border: 1px solid #f1f2f4; */
+
+  border-radius: 0.875em;
+  box-shadow: 0.2em 0.2em 0.7em #c9d2e2, -0.25em -0.25em 0.5em #ffffff;
+  /* box-shadow: 0.2em 0.2em 0.75em rgba(217, 210, 200, 0.51), -0.2em -0.2em 0.75em rgba(255, 255, 255, 0.83); */
+
+  overflow: hidden;
+}
+.neumorphism-pressed, button.neumorphism:active {
+  background-color: #edeff2;
+  background-color: #e7eaed;
+  /* border: 1px solid rgba(255, 255, 255, 0.2); */
+  border: none;
+  border-radius: 0.875em;
+  box-shadow: inset 0.2em 0.2em 0.7em #c9d2e2, inset -0.25em -0.25em 0.5em #ffffff;
+  /* box-shadow: inset 0.25em 0.25em 0.75em rgba(217, 210, 200, 0.51), inset -0.25em -0.25em 0.75em rgba(255, 255, 255, 0.83); */
+
+  overflow: hidden;
+}
+.neumorphism:focus, .neumorphism:active, .neumorphism:hover {
+  box-shadow: 0.25em 0.25em 0.5em #c9d2e2, -0.25em -0.25em 0.5em #ffffff;
+}
+.neumorphism-pressed:focus, .neumorphism-pressed:active, .neumorphism-pressed:hover {
+  box-shadow: inset 0.25em 0.25em 0.5em #c9d2e2, inset -0.25em -0.25em 0.5em #ffffff;
 }

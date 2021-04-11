@@ -1,5 +1,5 @@
 import { getDiary } from '@state/diary';
-import { addOnChangeListener, ChangeListener, setDate, simpleDateToDate } from './state/date';
+import { addOnChangeListener, ChangeListener, getToday, isThisMonth, setDate, simpleDateToDate } from './state/date';
 
 const emptyCells: HTMLElement[] = [];
 const dateCells: HTMLElement[] = [];
@@ -43,6 +43,7 @@ const updateCalendar: ChangeListener = async date => {
   const month = date.month(); // 0 ~ 11
   const daysInMonth = date.daysInMonth();
   const day = date.date(1).day(); // 0(Sun) ~ 6(Sat)
+  const today = getToday();
 
   // show/hide empty cells
   emptyCells.map((cell, index) => {
@@ -52,9 +53,15 @@ const updateCalendar: ChangeListener = async date => {
   // show/hide date cells
   dateCells.map((cell, index) => {
     delete cell.dataset.selected;
+    delete cell.dataset.today;
     cell.dataset.visible = String(index < daysInMonth);
   });
   dateCells[date.date() - 1].dataset.selected = "true";
+
+  // show today
+  if (isThisMonth(date)) {
+    dateCells[today.date() - 1].dataset.today = "true";
+  }
 
   // update title
   const calendarTitleElement = document.getElementById('calendar_title') as HTMLElement;
@@ -64,7 +71,7 @@ const updateCalendar: ChangeListener = async date => {
     Array(daysInMonth).fill(null).map((_, i) => getDiary(simpleDateToDate({ year, month, date: i + 1 })))
   );
   dateCells.slice(0, diaries.length).map((cell, index) => {
-    cell.dataset.emotion = diaries[index]?.emotion.toString();
+    cell.dataset.emotion = diaries[index]?.emotion;
   });
 };
 

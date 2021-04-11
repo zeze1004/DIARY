@@ -3,22 +3,20 @@ import { addMonth, addOnChangeListener, Date, dispatchChange, getDate, isToday, 
 import { Diary, getDiary, setDiary } from './state/diary';
 
 function initView() {
-  const btnDiaryFeeling = document.getElementById('btn_diary_emotion') as HTMLElement;
   const btnSaveDiary = document.getElementById('btn_save_diary') as HTMLElement;
+  const optionDiaryEmotion = document.getElementById('option_diary_emotion') as HTMLInputElement;
 
   btnSaveDiary.addEventListener('click', function () {
     const contents = (document.getElementById('diary_content') as HTMLInputElement).value;
+    const emotion = optionDiaryEmotion.value;
+
+    console.log('save diary', emotion);
 
     setDiary(getDate(), {
       date: getDate().format('YYMMDD'),
       contents,
-      emotion: parseInt(btnDiaryFeeling.dataset.emotion || '3'),
+      emotion,
     });
-  });
-
-  btnDiaryFeeling.addEventListener('click', function () {
-    const emotion = parseInt(this.dataset.emotion || '3');
-    this.dataset.emotion = String((emotion + 1) % 4);
   });
 
   // init buttons
@@ -33,16 +31,16 @@ async function setDiaryView(date: Date) {
 
   const btnSaveDiary = document.getElementById('btn_save_diary') as HTMLInputElement;
   const diaryEditorView = document.getElementById('diary_editor_view') as HTMLElement;
-  const btnDiaryFeeling = document.getElementById('btn_diary_emotion') as HTMLInputElement;
+  const optionDiaryEmotion = document.getElementById('option_diary_emotion') as HTMLInputElement;
   const footer = document.getElementById('footer') as HTMLElement;
   const diaryContent = document.getElementById('diary_content') as HTMLInputElement;
   const emptyView = document.getElementById('empty_view') as HTMLElement;
 
-  btnDiaryFeeling.dataset.emotion = String(diary?.emotion ?? -1);
+  optionDiaryEmotion.value = diary?.emotion ?? '-1';
   diaryContent.value = diary?.contents || '';
   footer.innerHTML = date.format('YYYY-MM-DD');
 
-  btnDiaryFeeling.disabled = btnSaveDiary.disabled = diaryContent.disabled = !diaryEditable;
+  optionDiaryEmotion.disabled = btnSaveDiary.disabled = diaryContent.disabled = !diaryEditable;
 
   // show/hide editor
   if (!diary && !diaryEditable) {

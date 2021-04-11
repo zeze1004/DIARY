@@ -10,10 +10,10 @@
   <script src="bundle.js"></script>
 </head>
 
-<body class="d-flex flex-column">
+<body class="d-flex flex-column p-3">
 
   <!-- header -->
-  <div id="header">
+  <div id="header" class="neumorphism">
     <div id="topbar">
       <h1 class="title">DIARY</h1>
       <button id="btn_option" class="btn-text p-1 m-auto mr-0">
@@ -46,11 +46,19 @@
   <div id="calendar_body"></div>
 
   <!-- diary view -->
-  <div id="diary_view" class="p-3 h-100">
+  <div id="diary_view">
     <div id="diary_editor_view">
-      <button id="btn_diary_emotion"></button>
-      <button id="btn_save_diary" tabindex="-1">저장</button>
-      <textarea name="content" id="diary_content" class="w-100 h-100" placeholder="내용을 입력하세요"></textarea>
+      <div class="d-flex">
+        <select id="option_diary_emotion" class="neumorphism">
+          <option value="-1" disabled>오늘의 기분은?</option>
+          <option value="3">행복함</option>
+          <option value="2">괜찮음</option>
+          <option value="1">실망스러움</option>
+          <option value="0">슬픔</option>
+        </select>
+        <button id="btn_save_diary" class="neumorphism ml-auto" tabindex="-1">저장</button>
+      </div>
+      <textarea name="content" id="diary_content" class="flex-grow neumorphism-pressed" placeholder="내용을 입력하세요"></textarea>
     </div>
     <div id="empty_view">
       <span>일기가 없습니다</span>
