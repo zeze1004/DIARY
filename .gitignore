@@ -19,3 +19,4 @@ gradle-app.setting
 >>>>>>> b4b8ffec4322b97a4c627e948855404bef2f9580
 
 *.yml
+/src/main/resources/
