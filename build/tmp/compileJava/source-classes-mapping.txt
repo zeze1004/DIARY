@@ -6,8 +6,8 @@ com/ssonobackend/diarybackend/SwaggerConfig.java
  com.ssonobackend.diarybackend.SwaggerConfig
 com/ssonobackend/diarybackend/repository/JournalRepository.java
  com.ssonobackend.diarybackend.repository.JournalRepository
-com/ssonobackend/diarybackend/config/auth/CustomOAuth2UserService.java
- com.ssonobackend.diarybackend.config.auth.CustomOAuth2UserService
+com/ssonobackend/diarybackend/repository/MemberRepository.java
+ com.ssonobackend.diarybackend.repository.MemberRepository
 com/ssonobackend/diarybackend/domain/Journal.java
  com.ssonobackend.diarybackend.domain.Journal
  com.ssonobackend.diarybackend.domain.Journal$JournalBuilder
@@ -28,9 +28,8 @@ com/ssonobackend/diarybackend/DiaryBackendApplication.java
  com.ssonobackend.diarybackend.DiaryBackendApplication
 com/ssonobackend/diarybackend/controller/PostsApiController.java
  com.ssonobackend.diarybackend.controller.PostsApiController
-com/ssonobackend/diarybackend/config/auth/dto/OAuthAttributes.java
- com.ssonobackend.diarybackend.config.auth.dto.OAuthAttributes
- com.ssonobackend.diarybackend.config.auth.dto.OAuthAttributes$OAuthAttributesBuilder
+com/ssonobackend/diarybackend/config/auth/SecurityConfig.java
+ com.ssonobackend.diarybackend.config.auth.SecurityConfig
 com/ssonobackend/diarybackend/service/JournalService.java
  com.ssonobackend.diarybackend.service.JournalService
 com/ssonobackend/diarybackend/domain/dto/PostsResponseDto.java
@@ -39,7 +38,8 @@ com/ssonobackend/diarybackend/controller/JournalApiController.java
  com.ssonobackend.diarybackend.controller.JournalApiController
 com/ssonobackend/diarybackend/repository/PostRepository.java
  com.ssonobackend.diarybackend.repository.PostRepository
-com/ssonobackend/diarybackend/repository/MemberRepository.java
- com.ssonobackend.diarybackend.repository.MemberRepository
-com/ssonobackend/diarybackend/config/auth/SecurityConfig.java
- com.ssonobackend.diarybackend.config.auth.SecurityConfig
+com/ssonobackend/diarybackend/config/auth/dto/OAuthAttributes.java
+ com.ssonobackend.diarybackend.config.auth.dto.OAuthAttributes
+ com.ssonobackend.diarybackend.config.auth.dto.OAuthAttributes$OAuthAttributesBuilder
+com/ssonobackend/diarybackend/config/auth/CustomOAuth2UserService.java
+ com.ssonobackend.diarybackend.config.auth.CustomOAuth2UserService

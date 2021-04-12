@@ -5,32 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3b95ead0-d2ed-4d1c-9f43-82f123f6b11e" name="디폴트 변경 목록" comment="">
-      <change beforePath="$PROJECT_DIR$/.gradle/6.7.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.7.1/executionHistory/executionHistory.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.7.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.7.1/executionHistory/executionHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.7.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.7.1/fileHashes/fileHashes.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.7.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.7.1/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.7.1/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.7.1/javaCompile/classAnalysis.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.7.1/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.7.1/javaCompile/javaCompile.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/ssonobackend/diarybackend/config/auth/CustomOAuth2UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/ssonobackend/diarybackend/config/auth/CustomOAuth2UserService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/ssonobackend/diarybackend/config/auth/SecurityConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/ssonobackend/diarybackend/config/auth/SecurityConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/ssonobackend/diarybackend/config/auth/dto/OAuthAttributes.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/ssonobackend/diarybackend/config/auth/dto/OAuthAttributes.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/ssonobackend/diarybackend/controller/JournalApiController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/ssonobackend/diarybackend/controller/JournalApiController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/ssonobackend/diarybackend/domain/Member$MemberBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/ssonobackend/diarybackend/domain/Member$MemberBuilder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/ssonobackend/diarybackend/domain/Member.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/ssonobackend/diarybackend/domain/Member.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/ssonobackend/diarybackend/domain/Role.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/ssonobackend/diarybackend/domain/Role.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/source-classes-mapping.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileJava/source-classes-mapping.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ssonobackend/diarybackend/config/auth/CustomOAuth2UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ssonobackend/diarybackend/config/auth/CustomOAuth2UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ssonobackend/diarybackend/config/auth/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ssonobackend/diarybackend/config/auth/SecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ssonobackend/diarybackend/config/auth/dto/OAuthAttributes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ssonobackend/diarybackend/config/auth/dto/OAuthAttributes.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ssonobackend/diarybackend/controller/JournalApiController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ssonobackend/diarybackend/controller/JournalApiController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ssonobackend/diarybackend/domain/Journal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ssonobackend/diarybackend/domain/Journal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ssonobackend/diarybackend/domain/Member.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ssonobackend/diarybackend/domain/Member.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ssonobackend/diarybackend/domain/Role.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ssonobackend/diarybackend/domain/Role.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ssonobackend/diarybackend/service/JournalService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ssonobackend/diarybackend/service/JournalService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ssonobackend/diarybackend/service/JournalServicempl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ssonobackend/diarybackend/service/JournalServicempl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application-oauth.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application-oauth.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -122,17 +97,6 @@
     </key>
   </component>
   <component name="RunManager" selected="Spring Boot.DiaryBackendApplication">
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="MemberServiceTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -189,7 +153,8 @@
       <workItem from="1617720390915" duration="994000" />
       <workItem from="1617871518087" duration="7892000" />
       <workItem from="1617880054875" duration="9000" />
-      <workItem from="1617892313232" duration="11866000" />
+      <workItem from="1617892313232" duration="12465000" />
+      <workItem from="1618224500655" duration="354000" />
     </task>
     <task id="LOCAL-00001" summary="frontend 병합">
       <created>1612597495167</created>
