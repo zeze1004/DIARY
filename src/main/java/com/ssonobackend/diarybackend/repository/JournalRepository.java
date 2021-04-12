@@ -9,6 +9,6 @@ import java.util.stream.Stream;
 
 @Repository
 public interface JournalRepository extends JpaRepository<Journal, Long> {
-    Stream<Journal> findByEmotion(String emotion);
+    Stream<Journal> findByEmotion(Integer emotion);
     Journal findByDate(Long date);
 }

@@ -22,7 +22,7 @@ public class JournalServicempl implements JournalService {
 
     @Override
     public List<Journal> findByEmotion() {
-        return journalRepository.findByEmotion("1").collect(Collectors.toList());
+        return journalRepository.findByEmotion(4).collect(Collectors.toList());
     }
 
     @Override
