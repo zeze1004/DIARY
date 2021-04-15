@@ -10,63 +10,83 @@
   <script src="bundle.js"></script>
 </head>
 
-<body class="d-flex flex-column p-3">
+<body>
 
-  <!-- header -->
-  <div id="header" class="neumorphism">
-    <div id="topbar">
-      <h1 class="title">DIARY</h1>
-      <button id="btn_option" class="btn-text ml-auto">
-        <img src="./img/more_vert-24px.svg" alt="More">
-      </button>
-    </div>
-
-    <div id="calendar_month">
-      <button id="btn_prev" class="btn-text p-2 neumorphism round">
-        <img src="./img/keyboard_arrow_left-24px.svg" alt="Prev">
-      </button>
-      <h2 id="calendar_title" class="flex-grow m-4 mx-0"></h2>
-      <button id="btn_next" class="btn-text p-2 neumorphism round">
-        <img src="./img/keyboard_arrow_right-24px.svg" alt="Next">
-      </button>
-    </div>
-
-    <div id="calendar_days">
-      <div class="w-1-7">일</div>
-      <div class="w-1-7">월</div>
-      <div class="w-1-7">화</div>
-      <div class="w-1-7">수</div>
-      <div class="w-1-7">목</div>
-      <div class="w-1-7">금</div>
-      <div class="w-1-7">토</div>
-    </div>
-  </div>
-
-  <!-- Calendar Body -->
-  <div id="calendar_body"></div>
-
-  <!-- diary view -->
-  <div id="diary_view">
-    <div id="diary_editor_view">
-      <div class="d-flex">
-        <select id="option_diary_emotion" class="neumorphism">
-          <option value="-1" disabled>오늘의 기분은?</option>
-          <option value="3">행복함</option>
-          <option value="2">괜찮음</option>
-          <option value="1">실망스러움</option>
-          <option value="0">슬픔</option>
-        </select>
-        <button id="btn_save_diary" class="neumorphism ml-auto" tabindex="-1">저장</button>
+  <div class="d-flex flex-column p-3 h-100">
+    <!-- header -->
+    <div id="header" class="neumorphism">
+      <div class="topbar">
+        <h1 class="title">DIARY</h1>
+        <button id="btn_open_settings" class="btn-text ml-auto">
+          <img src="./img/more_vert-24px.svg" alt="More">
+        </button>
       </div>
-      <textarea name="content" id="diary_content" class="flex-grow neumorphism-pressed" placeholder="내용을 입력하세요"></textarea>
+
+      <div id="calendar_month">
+        <button id="btn_prev" class="btn-text p-2 neumorphism round">
+          <img src="./img/keyboard_arrow_left-24px.svg" alt="Prev">
+        </button>
+        <h2 id="calendar_title" class="flex-grow m-4 mx-0"></h2>
+        <button id="btn_next" class="btn-text p-2 neumorphism round">
+          <img src="./img/keyboard_arrow_right-24px.svg" alt="Next">
+        </button>
+      </div>
+
+      <div id="calendar_days">
+        <div class="w-1-7">일</div>
+        <div class="w-1-7">월</div>
+        <div class="w-1-7">화</div>
+        <div class="w-1-7">수</div>
+        <div class="w-1-7">목</div>
+        <div class="w-1-7">금</div>
+        <div class="w-1-7">토</div>
+      </div>
     </div>
-    <div id="empty_view">
-      <span>일기가 없습니다</span>
+
+    <!-- Calendar Body -->
+    <div id="calendar_body"></div>
+
+    <!-- diary view -->
+    <div id="diary_view">
+      <div id="diary_editor_view">
+        <div class="d-flex">
+          <select id="option_diary_emotion" class="neumorphism">
+            <option value="-1" disabled>오늘의 기분은?</option>
+            <option value="3">행복함</option>
+            <option value="2">괜찮음</option>
+            <option value="1">실망스러움</option>
+            <option value="0">슬픔</option>
+          </select>
+          <button id="btn_save_diary" class="neumorphism ml-auto" tabindex="-1">저장</button>
+        </div>
+        <textarea name="content" id="diary_content" class="flex-grow neumorphism-pressed" placeholder="내용을 입력하세요"></textarea>
+      </div>
+      <div id="empty_view">
+        <span>일기가 없습니다</span>
+      </div>
     </div>
+    
+    <!-- Footer -->
+    <footer id="footer"></footer>
   </div>
-  
-  <!-- Footer -->
-  <footer id="footer"></footer>
+
+  <div id="setting_page" class="d-none d-flex flex-column p-3">
+    <div class="topbar">
+      <h1 class="title">설정</h1>
+      <button id="btn_close_settings" class="btn-text ml-auto">
+        <img src="./img/clear-24px.svg" alt="Close">
+      </button>
+    </div>
+
+    <div class="p-3">
+      <h2>로그인 정보</h2>
+    
+      <h2>알림</h2>
+      <input type="checkbox" name="alarmOn" id="checkbox_alarm">
+    </div>
+
+  </div>
+
 </body>
 
 </html>
