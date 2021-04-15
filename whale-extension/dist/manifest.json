@@ -20,7 +20,15 @@
     "mobile_user_agent": false
   },
 
+  "background": {
+    "scripts": ["background.js"]
+  },
+
   "permissions": [
-    "storage"
+    "alarms",
+    "identity",
+    "notifications",
+    "storage",
+    "https://uostime.herokuapp.com/*"
   ]
 }
