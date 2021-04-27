@@ -70,7 +70,7 @@
     <footer id="footer"></footer>
   </div>
 
-  <div id="setting_page" class="d-none d-flex flex-column p-3">
+  <div id="setting_page" class="d-flex flex-column p-3" hidden>
     <div class="topbar">
       <h1 class="title">설정</h1>
       <button id="btn_close_settings" class="btn-text ml-auto">
@@ -78,11 +78,34 @@
       </button>
     </div>
 
-    <div class="p-3">
+    <div class="d-flex flex-column p-3">
       <h2>로그인 정보</h2>
     
-      <h2>알림</h2>
-      <input type="checkbox" name="alarmOn" id="checkbox_alarm">
+      <label class="toggle-control">
+        <input type="checkbox" id="checkbox_alarm">
+        <h2>알림</h2>
+        <span class="control neumorphism-pressed">
+          <span class="indicator"></span>
+        </span>
+      </label>
+      <div id="checkbox_alarm_option">
+        <label>
+          <span class="label-text">알림 시각</span>
+          <input type="number" id="checkbox_alarm_hour" min="0" max="23" class="w-3 text-center">
+          <span>시</span>
+          <input type="number" id="checkbox_alarm_minute" min="0" max="59" class="w-3 text-center">
+          <span>분</span>
+        </label>
+        <label>
+          <span class="label-text">반복 알림</span>
+          <div class="m-0 ml-auto">
+            <input type="number" id="checkbox_alarm_repeat_period" min="1" max="60" class="m-0 mr-auto w-3 text-center">
+            <span>분 마다, 총</span>
+            <input type="number" id="checkbox_alarm_repeat_number" min="1" max="10" class="m-0 mr-auto w-3 text-center">
+            <span>회 반복</span>
+          </div>
+        </label>
+      </div>
     </div>
 
   </div>

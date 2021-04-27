@@ -1,10 +1,18 @@
 import { initCalendar } from './calendar';
+import { initSetting } from './setting';
 import { addMonth, addOnChangeListener, Date, dispatchChange, getDate, isToday, subtractMonth } from './state/date';
 import { Diary, getDiary, setDiary } from './state/diary';
 
 function initView() {
   const btnSaveDiary = document.getElementById('btn_save_diary') as HTMLElement;
   const optionDiaryEmotion = document.getElementById('option_diary_emotion') as HTMLInputElement;
+
+  const btnOpenSettings = document.getElementById('btn_open_settings') as HTMLElement;
+  const btnCloseSettings = document.getElementById('btn_close_settings') as HTMLElement;
+  const settingPage = document.getElementById('setting_page') as HTMLElement;
+
+  btnOpenSettings.addEventListener('click', () => { settingPage.hidden = false; });
+  btnCloseSettings.addEventListener('click', () => { settingPage.hidden = true; });
 
   btnSaveDiary.addEventListener('click', function () {
     const contents = (document.getElementById('diary_content') as HTMLInputElement).value;
@@ -43,19 +51,15 @@ async function setDiaryView(date: Date) {
   optionDiaryEmotion.disabled = btnSaveDiary.disabled = diaryContent.disabled = !diaryEditable;
 
   // show/hide editor
-  if (!diary && !diaryEditable) {
-    // no diary
-    diaryEditorView.classList.add('d-none');
-    emptyView.classList.remove('d-none');
-  } else {
-    diaryEditorView.classList.remove('d-none');
-    emptyView.classList.add('d-none');
-  }
+  const showEditor = !diary && !diaryEditable;
+  diaryEditorView.hidden = showEditor;
+  emptyView.hidden = !showEditor;
 }
 
 window.onload = function () {
   initView();
   initCalendar();
+  initSetting();
 
   dispatchChange();
 };

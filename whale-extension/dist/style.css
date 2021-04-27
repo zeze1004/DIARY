@@ -17,7 +17,7 @@
 
   --box-shadow-color-dark: rgba(0, 0, 0, 0.15);
   --box-shadow-color-light: rgba(255, 255, 255, 0.5);
-  
+
   --text-shadow:inset  0.1em 0.1em 0.2em var(--box-shadow-color-dark), inset -0.1em -0.1em 0.2em var(--box-shadow-color-light);
 
   --box-shadow: 0.2em 0.2em 0.4em var(--box-shadow-color-dark), -0.2em -0.2em 0.4em var(--box-shadow-color-light);
@@ -85,6 +85,7 @@ footer {
 /* width, height */
 .w-100 { width: 100%; }
 .w-1-7 { width: calc(100% / 7); }
+.w-3 { width: 3em; }
 .h-100 { height: 100%; }
 
 /* margin, padding */
@@ -135,7 +136,7 @@ footer {
 .align-items-center { align-items: center; }
 .flex-grow { flex-grow: 1; }
 
-.d-none { display: none !important; }
+.d-none, [hidden] { display: none !important; }
 
 /* text */
 .bold { font-weight: bold; }
@@ -336,6 +337,11 @@ input, textarea {
   transition: background-color 0.27s ease;
 }
 
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+}
+
 textarea {
   resize: none;
 }
@@ -383,6 +389,13 @@ select:disabled {
   box-shadow: var(--box-shadow), var(--box-shadow-convex);
   overflow: hidden;
 }
+.neumorphism-mixed {
+  background-color: inherit;
+  border: none;
+  border-radius: 0.875em;
+  box-shadow: var(--box-shadow), var(--box-shadow-inset);
+  overflow: hidden;
+}
 .neumorphism-pressed, button.neumorphism:active {
   background-color: inherit;
   border: none;
@@ -410,3 +423,77 @@ select:disabled {
   height: 100%;
   z-index: 1;
 }
+#setting_page input {
+  background: transparent;
+  border-radius: 0;
+  border-bottom: 2px solid #cacaca;
+  padding: 0.25em 0.5em;
+  transition: border 0.2s ease;
+}
+#setting_page input:focus {
+  border-bottom: 2px solid #523da0;
+}
+#setting_page label {
+  display: flex;
+  align-items: baseline;
+  line-height: 2em;
+  margin: 0.5em 0;
+}
+#setting_page label > span.label-text {
+  flex-grow: 1;
+}
+
+:root {
+  --toggle-background-color-on: #523da0;
+  --toggle-control-color: white;
+  --toggle-width: 3em;
+  --toggle-height: 1.5em;
+  --toggle-gutter: 0.2em;
+  --toggle-control-speed: .2s;
+  --toggle-control-ease: ease-out;
+  --toggle-radius: calc(var(--toggle-height) / 2);
+  --toggle-control-size: calc(var(--toggle-height) - var(--toggle-gutter) * 2);
+}
+.toggle-control {
+  display: flex;
+  align-items: center;
+  position: relative;
+  padding-right: calc(var(--toggle-width) + 0.5em);
+  cursor: pointer;
+  user-select: none;
+  border-radius: var(--toggle-radius);
+  height: var(--toggle-height);
+}
+.toggle-control input {
+  display: none;
+}
+.toggle-control input:checked ~ .control {
+  background-color: var(--toggle-background-color-on);
+}
+.toggle-control input:checked ~ .control .indicator {
+  left: calc(var(--toggle-width) - var(--toggle-control-size) - var(--toggle-gutter));
+}
+.toggle-control .control {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: var(--toggle-height);
+  width: var(--toggle-width);
+  border-radius: var(--toggle-radius);
+  overflow: visible;
+  background-color: transparent;
+  transition: background-color var(--toggle-control-speed) var(--toggle-control-ease);
+}
+.toggle-control .control .indicator {
+  position: absolute;
+  left: var(--toggle-gutter);
+  top: var(--toggle-gutter);
+  width: var(--toggle-control-size);
+  height: var(--toggle-control-size);
+  border-radius: var(--toggle-radius);
+  background: var(--toggle-control-color);
+  transition: left var(--toggle-control-speed) var(--toggle-control-ease),
+  background-color var(--toggle-control-speed) var(--toggle-control-ease);
+  z-index: 10;
+}
+
