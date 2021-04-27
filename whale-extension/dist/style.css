@@ -177,6 +177,14 @@ footer {
   user-select: none;
 }
 
+#calendar_title {
+  flex-grow: 1;
+  margin: 1em 0 1.6em 0;
+}
+#calendar_title > * {
+  margin: 0;
+}
+
 .topbar {
   align-items: start;
   display: flex;

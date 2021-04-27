@@ -64,8 +64,10 @@ const updateCalendar: ChangeListener = async date => {
   }
 
   // update title
-  const calendarTitleElement = document.getElementById('calendar_title') as HTMLElement;
-  calendarTitleElement.innerHTML = date.format('MMMM YYYY');
+  const calendarTitleYearElement = document.getElementById('calendar_title_year') as HTMLElement;
+  calendarTitleYearElement.innerHTML = date.format('YYYY');
+  const calendarTitleMonthElement = document.getElementById('calendar_title_month') as HTMLElement;
+  calendarTitleMonthElement.innerHTML = date.format('MMMM');
 
   const diaries = await Promise.all(
     Array(daysInMonth).fill(null).map((_, i) => getDiary(simpleDateToDate({ year, month, date: i + 1 })))
