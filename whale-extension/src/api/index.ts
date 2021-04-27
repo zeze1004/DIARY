@@ -72,7 +72,7 @@ function getURLAndRequestInit(api: API, body: any = {}, date?: string): { url: R
       headers,
       redirect,
       referrerPolicy,
-      body: JSON.stringify(body), // body data type must match "Content-Type" header
+      body: (method === GET ? undefined : JSON.stringify(body)), // body data type must match "Content-Type" header
     },
   };
 }
