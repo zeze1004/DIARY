@@ -1,6 +1,6 @@
 //package com.ssonobackend.diarybackend.service;
 //
-//import com.ssonobackend.diarybackend.domain.Member;
+//import com.ssonobackend.diarybackend.domain.entity.Member;
 //import com.ssonobackend.diarybackend.repository.MemberRepository;
 //import lombok.RequiredArgsConstructor;
 //import org.springframework.stereotype.Service;

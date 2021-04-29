@@ -1,6 +1,6 @@
 package com.ssonobackend.diarybackend.service;
 
-import com.ssonobackend.diarybackend.domain.Journal;
+import com.ssonobackend.diarybackend.domain.entity.Journal;
 import com.ssonobackend.diarybackend.repository.JournalRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;

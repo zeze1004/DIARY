@@ -1,6 +1,6 @@
 package com.ssonobackend.diarybackend.service;
 
-import com.ssonobackend.diarybackend.domain.Journal;
+import com.ssonobackend.diarybackend.domain.entity.Journal;
 import com.ssonobackend.diarybackend.domain.dto.PostsSaveRequestDto;
 import com.ssonobackend.diarybackend.domain.dto.PostsUpdateRequestDto;
 import com.ssonobackend.diarybackend.repository.PostRepository;

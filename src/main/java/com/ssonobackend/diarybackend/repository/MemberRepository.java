@@ -1,6 +1,6 @@
 package com.ssonobackend.diarybackend.repository;
 
-import com.ssonobackend.diarybackend.domain.Member;
+import com.ssonobackend.diarybackend.domain.entity.Member;
 
 import java.util.Optional;
 import org.springframework.data.jpa.repository.JpaRepository;

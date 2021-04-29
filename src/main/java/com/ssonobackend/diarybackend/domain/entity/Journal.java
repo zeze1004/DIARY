@@ -1,4 +1,4 @@
-package com.ssonobackend.diarybackend.domain;
+package com.ssonobackend.diarybackend.domain.entity;
 
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -15,11 +15,11 @@ import javax.persistence.*;
 @ApiModel
 @NoArgsConstructor
 public class Journal  {
-    @Id
+    @Id @GeneratedValue
+    @Column(name = "journal_id")
+    private Long id;
+
     @Column(name = "DATE")
-    @ApiModelProperty(value = "날짜")
-    //@GeneratedValue(generator = "uuid")
-    //@GenericGenerator(name = "uuid", strategy = "uuid2")
     private Long date;
 
     @Column(name = "CONTENTS")
@@ -27,6 +27,13 @@ public class Journal  {
 
     @Column(name = "EMOTION")
     private Integer emotion; //숫자로
+
+    // 저날(일기 기록)이 `다`이므로 외래키 갖기
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "member_id")
+    private Member member;
+
+
 
     @Builder
     public Journal(String contents, Integer emotion, Long date) {

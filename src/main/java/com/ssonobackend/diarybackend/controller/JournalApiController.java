@@ -1,6 +1,6 @@
 package com.ssonobackend.diarybackend.controller;
 
-import com.ssonobackend.diarybackend.domain.Journal;
+import com.ssonobackend.diarybackend.domain.entity.Journal;
 import com.ssonobackend.diarybackend.service.JournalService;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
