@@ -6,9 +6,13 @@ import com.ssonobackend.diarybackend.repository.MemberRepository;
 import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Configurable;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -18,9 +22,8 @@ import java.util.Optional;
 @Service
 public class MemberService implements UserDetailsService {
 
-    private MemberRepository memberRepository;
-
-    private ModelMapper modelMapper;
+    private final MemberRepository memberRepository;
+    private final ModelMapper modelMapper;
 
     @Autowired
     public MemberService(MemberRepository memberRepository, ModelMapper modelMapper) {

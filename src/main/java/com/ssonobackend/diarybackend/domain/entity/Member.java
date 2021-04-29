@@ -36,7 +36,7 @@ public class Member implements UserDetails {
     private Role role;
 
     @OneToMany(mappedBy = "member")
-    List<Journal> journalList = new ArrayList<>();
+    private List<Journal> journalList = new ArrayList<>();
 
 
     @Builder

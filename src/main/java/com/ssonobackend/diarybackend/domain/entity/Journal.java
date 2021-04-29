@@ -10,9 +10,9 @@ import javax.persistence.*;
 @Entity @Getter
 @Data
 @ApiModel
-@NoArgsConstructor
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
 public class Journal  {
-    @Id @GeneratedValue
+    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "journal_id")
     private Long id;
 
