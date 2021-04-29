@@ -2,15 +2,12 @@ package com.ssonobackend.diarybackend.domain.entity;
 
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import lombok.Builder;
+import lombok.*;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
 
-@Entity(name = "JOURNAL")
+@Entity @Getter
 @Data
 @ApiModel
 @NoArgsConstructor
@@ -30,7 +27,7 @@ public class Journal  {
 
     // 저날(일기 기록)이 `다`이므로 외래키 갖기
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "member_id")
+    @JoinColumn(name = "member_num")
     private Member member;
 
 
