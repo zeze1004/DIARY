@@ -13,8 +13,8 @@ import java.util.List;
 
 @Entity
 @Getter
-@NoArgsConstructor
-@ToString(of = {"id", "name", "email", "password", "role"})
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
+//@ToString(of = {"id", "name", "email", "password", "role"})
 public class Member implements UserDetails {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

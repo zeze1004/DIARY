@@ -47,7 +47,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .and()
                 .authorizeRequests() // 다음 리퀘스트에 대한 사용권한 체크
                 .antMatchers("/api/user/login", "/api/user/signup").permitAll() // 가입 및 인증 주소는 누구나 접근가능
-                .anyRequest().hasRole("USER") // 그외 나머지 요청은 모두 인증된 회원만 접근 가능
+                .anyRequest().hasRole("USER") // 그외 나머지 요청은 ROLE_USER만 접근 가능
                 .and()
                 .cors()
                 .and()

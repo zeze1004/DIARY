@@ -40,7 +40,7 @@ public class MemberApiController {
         return jwtTokenProvider.createToken(ustoken.getId().toString(), ustoken.getType());
     }
 
-    //회원가입
+    // 회원가입
     @PostMapping("/signup")
     public void signup(@Valid @RequestBody MemberDTO.signupDTO sdto) throws NotFoundException {
 
