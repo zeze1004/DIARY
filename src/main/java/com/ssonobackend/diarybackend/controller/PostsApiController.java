@@ -16,8 +16,8 @@ public class PostsApiController {
     // 등록
     @ApiOperation(value = "일기 등록", notes = "일기를 작성합니다.")
     @PostMapping("/{date}")
-    public Long save(@PathVariable Long date, @RequestBody PostsSaveRequestDto requestDto) {
-        return postsService.save(requestDto);
+    public void save(@PathVariable Long date, @RequestBody PostsSaveRequestDto requestDto) {
+        postsService.save(date, requestDto);
     }
     // 수정
     @ApiOperation(value = "일기 수정", notes = "일기를 수정합니다.")

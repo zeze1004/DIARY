@@ -3,19 +3,22 @@ package com.ssonobackend.diarybackend.domain.dto;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 @Getter
 @NoArgsConstructor
 
 public class PostsUpdateRequestDto {
+    private Long writer;
     private String contents;
     private Integer emotion;
+    @Setter
     private Long date;
 
     @Builder
-    public PostsUpdateRequestDto(String contents, Integer emotion, Long date) {
+    public PostsUpdateRequestDto(Long writer, String contents, Integer emotion) {
         this.contents = contents;
         this.emotion= emotion;
-        this.date = date;
+        this.writer = writer;
     }
 }
