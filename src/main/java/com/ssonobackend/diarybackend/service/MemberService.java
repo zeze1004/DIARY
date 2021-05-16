@@ -1,43 +1,77 @@
-//package com.ssonobackend.diarybackend.service;
-//
-//import com.ssonobackend.diarybackend.domain.Member;
-//import com.ssonobackend.diarybackend.repository.MemberRepository;
-//import lombok.RequiredArgsConstructor;
-//import org.springframework.stereotype.Service;
-//import org.springframework.transaction.annotation.Transactional;
-//
-//import java.util.List;
-//
-//@Service
-//@Transactional(readOnly = true) // 조회시 데이터 변경 x
-//@RequiredArgsConstructor // final을 가진 필드만 생성자를 만들어줌
-//public class MemberService {
-//    private final MemberRepository memberRepository;
-//
-//    @Transactional(readOnly = false)
-//    // 회원가입
-//    public Long join(Member member) {
-//        validateDuplicateMember(member);    // 중복 회원 검증
-//        memberRepository.save(member);
-//        // 문제가 없으면 id 반환환
-//        return member.getId();
-//    }
-//
-//    // 중복 회원 검증
+package com.ssonobackend.diarybackend.service;
+
+import com.ssonobackend.diarybackend.domain.dto.MemberDTO;
+import com.ssonobackend.diarybackend.domain.entity.Member;
+import com.ssonobackend.diarybackend.repository.MemberRepository;
+import lombok.RequiredArgsConstructor;
+import org.modelmapper.ModelMapper;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Configurable;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
+
+import java.util.List;
+import java.util.Optional;
+
+
+@Service
+public class MemberService implements UserDetailsService {
+
+    private final MemberRepository memberRepository;
+    private final ModelMapper modelMapper;
+
+    @Autowired
+    public MemberService(MemberRepository memberRepository, ModelMapper modelMapper) {
+        this.memberRepository = memberRepository;
+        this.modelMapper = modelMapper;
+    }
+
+
+    public Member signup(MemberDTO.signupDTO sdto) {
+        Member member = modelMapper.map(sdto, Member.class);
+        return memberRepository.save(member);
+    }
+
+    public boolean checkId(String id) {
+        return memberRepository.existsByEmail(id);
+    }
+
+    // 이게 필요할까?
+    // 중복 회원 검증
 //    private void validateDuplicateMember(Member member) {
-//        List<Member> findMembers = memberRepository.findByName(member.getName());
+//        Optional<Member> findMembers = memberRepository.findByEmail(member.getEmail());
 //        if (!findMembers.isEmpty()) {
 //            throw new IllegalStateException("이미 존재하는 회원입니다");
 //        }
 //    }
-//
-//    // 회원 전체 조회
-//    public List<Member> findMember() {
-//        return memberRepository.findAll();
+
+    // 회원 전체 조회
+    public List<Member> findMember() {
+        return memberRepository.findAll();
+    }
+
+    public MemberDTO.usertokenDTO login(MemberDTO.loginDTO ldto) {
+        Optional<Member> member = memberRepository.findByEmail(ldto.getEmail());
+        if (member.isPresent()) {
+            return MemberDTO.usertokenDTO.builder()
+                    .id(member.get().getId())
+                    .password(member.get().getPassword()).build();
+        }
+        return null;
+    }
+
+    @Override
+    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+        return null;
+    }
+
+    // 회원 password 검색
+//    public Member findOne(String email) {
+//        return memberRepository.findByEmail(member.getEmail());
 //    }
-//
-//    // 회원 id 검색
-//    public Member findOne(Long memberId) {
-//        return memberRepository.findOne(memberId);
-//    }
-//}
+}
