@@ -10,18 +10,18 @@ import org.springframework.web.bind.annotation.*;
 
 @RequiredArgsConstructor
 @RestController
-
+@RequestMapping("/diary")
 public class PostsApiController {
     private final PostsService postsService;
     // 등록
     @ApiOperation(value = "일기 등록", notes = "일기를 작성합니다.")
-    @PostMapping("/diary")
-    public Long save(@RequestBody PostsSaveRequestDto requestDto) {
+    @PostMapping("/{date}")
+    public Long save(@PathVariable Long date, @RequestBody PostsSaveRequestDto requestDto) {
         return postsService.save(requestDto);
     }
     // 수정
     @ApiOperation(value = "일기 수정", notes = "일기를 수정합니다.")
-    @PutMapping("/diary/{date}")
+    @PutMapping("/{date}")
     public Long update(@PathVariable ("date") Long date, @RequestBody PostsUpdateRequestDto requestDto) {
         return postsService.update(date, requestDto);
     }
