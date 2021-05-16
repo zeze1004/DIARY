@@ -1,6 +1,10 @@
-
+HELP.md
 .gradle
-/build/
+build/
+!gradle/wrapper/gradle-wrapper.jar
+!**/src/main/**/build/
+!**/src/test/**/build/
+application.yml
 
 # Ignore Gradle GUI config
 gradle-app.setting
@@ -30,9 +34,13 @@ gradle-app.setting
 target/
 
 #IntelliJ files
-**/*.iml
-**/.idea
-**/.gradle
+.idea
+*.iws
+*.iml
+*.ipr
+out/
+!**/src/main/**/out/
+!**/src/test/**/out/
 
 
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
