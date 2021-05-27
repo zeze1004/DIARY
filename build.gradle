@@ -19,7 +19,7 @@ repositories {
 }
 
 dependencies {
-    compile "org.springframework.boot:spring-boot-starter-security"
+    compile 'org.springframework.boot:spring-boot-starter-security'
 
     implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
     implementation 'org.springframework.boot:spring-boot-starter-web'
@@ -32,7 +32,7 @@ dependencies {
     // Swagger 2
     compile group: 'io.springfox', name: 'springfox-swagger2', version: '2.9.2'
     compile group: 'io.springfox', name: 'springfox-swagger-ui', version: '2.9.2'
-    compile('org.modelmapper:modelmapper:0.7.8')
+    compile 'org.modelmapper:modelmapper:0.7.8'
 
 //    compile group: 'org.springframework.security', name: 'spring-security-core', version: '5.0.2.RELEASE'
 //
@@ -40,10 +40,10 @@ dependencies {
 //    compile('org.springframework.security:spring-security-config:5.1.1.RELEASE')
 //    implementation group: 'org.mariadb.jdbc', name: 'mariadb-java-client', version: '2.4.1'
     // 마리아 디비
-    compile("org.mariadb.jdbc:mariadb-java-client")
+    compile 'org.mariadb.jdbc:mariadb-java-client'
 //    compile('org.springframework.session:spring-session-jdbc')
-    compile('io.jsonwebtoken:jjwt-api:0.11.1')
-    runtime('io.jsonwebtoken:jjwt-impl:0.11.1', 'io.jsonwebtoken:jjwt-jackson:0.11.1')
+    compile 'io.jsonwebtoken:jjwt-api:0.11.1'
+    runtime 'io.jsonwebtoken:jjwt-impl:0.11.1', 'io.jsonwebtoken:jjwt-jackson:0.11.1'
     annotationProcessor 'org.springframework.boot:spring-boot-configuration-processor'
     annotationProcessor 'org.projectlombok:lombok'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'

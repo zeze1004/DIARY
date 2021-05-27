@@ -1,31 +1,30 @@
 spring:
   datasource:
-    url: jdbc:h2:tcp://localhost/~/DIARY
-    username: sa
-    password:
-    driver-class-name: org.h2.Driver
+    url: jdbc:mariadb://zeze-webservice.chrlsttgnnig.ap-northeast-2.rds.amazonaws.com:3306/zeze_webservice
+    username: zeze
+    password: AWS110044!!zeze
+    driver-class-name: org.mariadb.jdbc.Driver
   jpa:
+    open-in-view: false
+    generate-ddl: true
+    show_sql: true
     hibernate:
       ddl-auto: create
-    properties:
-      hibernate:
-      # show_sql: true
-      format_sql: true
-  session:
-    store-type: jdbc
-    jdbc:
-      schema: classpath:org/springframework/session/jdbc/schema-@@platform@@.sql
-      initialize-schema: embedded
-      table-name: SPRING_SESSION
 
+#  session:
+#    store-type: jdbc
+#    jdbc:
+#      schema: classpath:org/springframework/session/jdbc/schema-@@platform@@.sql
+#      initialize-schema: embedded
+#      table-name: SPRING_SESSION
 
-  profiles:
-    include: oauth
 
 logging.level:
-  org.hibernate.SQL: debug
+  # org.hibernate.SQL: debug
+  '[org.hibernate.SQL]': debug
 
+# 로그인 세션 타임 설정
 server:
   servlet:
     session:
-      timeout:
+      timeout: 10000

@@ -1,7 +1,6 @@
 package com.ssonobackend.diarybackend.controller;
 
-import ;
-import com.ssonobackend.diarybcom.ssonobackend.diarybackend.domain.dto.PostsResponseDtoackend.domain.dto.PostsSaveRequestDto;
+import com.ssonobackend.diarybackend.domain.dto.PostsSaveRequestDto;
 import com.ssonobackend.diarybackend.domain.dto.PostsUpdateRequestDto;
 import com.ssonobackend.diarybackend.service.PostsService;
 import io.swagger.annotations.ApiOperation;
