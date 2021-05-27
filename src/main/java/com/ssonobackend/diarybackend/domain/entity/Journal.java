@@ -26,9 +26,9 @@ public class Journal  {
     private Integer emotion; //숫자로
 
     // 저날(일기 기록)이 `다`이므로 외래키 갖기
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "member_num")
-    private Member member;
+//    @OneToMany(fetch = FetchType.LAZY)
+//    @JoinColumn(name = "member_num")
+//    private Member member;
 
 
 

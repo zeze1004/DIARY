@@ -1,7 +1,7 @@
 package com.ssonobackend.diarybackend.domain.dto;
 
 import com.ssonobackend.diarybackend.domain.entity.Journal;
-import lombok.Data;
+import lombok.*;
 
 
 @Data

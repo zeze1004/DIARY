@@ -39,3 +39,5 @@ target/
 hs_err_pid*
 
 *.yml
+
+.vscode

@@ -35,8 +35,8 @@ public class Member implements UserDetails {
     @Column(nullable = true)     // 기본적으로 int로 된 숫자가 저장됨, 숫자로하면 의미를 알 수 없어 문자열로 수정
     private Role role;
 
-    @OneToMany(mappedBy = "member")
-    private List<Journal> journalList = new ArrayList<>();
+//    @OneToMany(mappedBy = "member")
+//    private List<Journal> journalList = new ArrayList<>();
 
 
     @Builder
