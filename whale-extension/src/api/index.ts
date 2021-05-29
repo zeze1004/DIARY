@@ -9,6 +9,8 @@ export enum API {
   CREATE_DIARY,
   UPDATE_DIARY,
   GET_RANDOM_DIARY,
+  SIGNIN,
+  SIGNUP,
 }
 
 // METHOD LIST
@@ -58,6 +60,16 @@ function getURLAndRequestInit(api: API, body: any = {}, date?: string): { url: R
       method = GET;
       break;
 
+    case API.SIGNIN:
+      path = `/user/login`;
+      method = POST;
+      break;
+
+    case API.SIGNUP:
+      path = `/user/signup`;
+      method = POST;
+      break;
+
     default:
       throw new Error('Unexpected API');
   }
@@ -82,11 +94,7 @@ export async function requestAPI(api: API, body: any = {}, date?: Date) {
 
   try {
     const response = await fetch(url, requestInit);
-    const parsedResponse = await response.json();
-
-    // TODO: return data from response
-
-    return parsedResponse;
+    return await response.json();
   } catch (e) {
     console.log(e);
     return null;

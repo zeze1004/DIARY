@@ -1,6 +1,8 @@
+import { initAccount } from './account';
 import { initCalendar } from './calendar';
 import { initSetting } from './setting';
-import { addMonth, addOnChangeListener, Date, dispatchChange, getDate, isToday, subtractMonth } from './state/date';
+import { dispatchChange as dispatchAccountChange } from './state/account';
+import { addMonth, addOnChangeListener, Date, dispatchChange as dispatchDateChange, getDate, isToday, subtractMonth } from './state/date';
 import { Diary, getDiary, setDiary } from './state/diary';
 
 function initView() {
@@ -60,6 +62,8 @@ window.onload = function () {
   initView();
   initCalendar();
   initSetting();
+  initAccount();
 
-  dispatchChange();
+  dispatchDateChange();
+  dispatchAccountChange();
 };

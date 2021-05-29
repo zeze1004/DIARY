@@ -82,32 +82,60 @@
     </div>
 
     <div class="d-flex flex-column p-3">
-      <h2>로그인 정보</h2>
-    
-      <label class="toggle-control">
-        <input type="checkbox" id="checkbox_alarm">
-        <h2>알림</h2>
-        <span class="control neumorphism-pressed">
-          <span class="indicator"></span>
-        </span>
-      </label>
-      <div id="checkbox_alarm_option">
-        <label>
-          <span class="label-text">알림 시각</span>
-          <input type="number" id="checkbox_alarm_hour" min="0" max="23" class="w-3 text-center">
-          <span>시</span>
-          <input type="number" id="checkbox_alarm_minute" min="0" max="59" class="w-3 text-center">
-          <span>분</span>
+      <div class="neumorphism d-flex flex-column p-3 m-4 mt-0 mx-0">
+        <div class="d-flex m-3 mt-0 mx-0">
+          <h2>계정</h2>
+          <button type="button" id="btn_switch" class="neumorphism ml-auto p-2 py-0"></button>
+        </div>
+        <div id="account_box">
+          <span id="account_nickname"></span>
+        </div>
+        <div>
+          <form id="sign_box">
+            <label>
+              <span class="label-text">이메일</span>
+              <input type="email" name="email" id="account_email_input" required>
+            </label>
+            <label>
+              <span class="label-text">비밀번호</span>
+              <input type="password" name="password" id="account_password_input" required>
+            </label>
+            <label id="account_nickname_box">
+              <span class="label-text">닉네임</span>
+              <input type="text" name="nickname" id="account_nickname_input">
+            </label>
+            <button type="submit" id="btn_signin" class="neumorphism mx-auto">로그인</button>
+            <button type="submit" id="btn_signup" class="neumorphism mx-auto">회원가입</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="neumorphism p-3 m-4 mt-0 mx-0">
+        <label class="toggle-control m-3 mt-0 mx-0">
+          <input type="checkbox" id="checkbox_alarm">
+          <h2>알림</h2>
+          <span class="control neumorphism-pressed">
+            <span class="indicator"></span>
+          </span>
         </label>
-        <label>
-          <span class="label-text">반복 알림</span>
-          <div class="m-0 ml-auto">
-            <input type="number" id="checkbox_alarm_repeat_period" min="1" max="60" class="m-0 mr-auto w-3 text-center">
-            <span>분 마다, 총</span>
-            <input type="number" id="checkbox_alarm_repeat_number" min="1" max="10" class="m-0 mr-auto w-3 text-center">
-            <span>회 반복</span>
-          </div>
-        </label>
+        <div id="checkbox_alarm_option" class="m-3 mx-0 mb-0">
+          <label>
+            <span class="label-text">알림 시각</span>
+            <input type="number" id="checkbox_alarm_hour" min="0" max="23" class="w-3 text-center">
+            <span>시</span>
+            <input type="number" id="checkbox_alarm_minute" min="0" max="59" class="w-3 text-center">
+            <span>분</span>
+          </label>
+          <label>
+            <span class="label-text">반복 알림</span>
+            <div class="m-0 ml-auto">
+              <input type="number" id="checkbox_alarm_repeat_period" min="1" max="60" class="m-0 mr-auto w-2 text-center">
+              <span>분 마다, 총</span>
+              <input type="number" id="checkbox_alarm_repeat_number" min="1" max="10" class="m-0 mr-auto w-2 text-center">
+              <span>회 반복</span>
+            </div>
+          </label>
+        </div>
       </div>
     </div>
 
