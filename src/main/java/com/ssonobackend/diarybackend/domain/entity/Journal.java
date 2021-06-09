@@ -9,6 +9,7 @@ import javax.persistence.*;
 
 @Entity
 @Getter
+@Setter
 @Data
 @ApiModel
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
@@ -29,7 +30,8 @@ public class Journal  {
 
 
     @Builder
-    public Journal(String contents, Integer emotion, Long date) {
+    public Journal(Member writer, String contents, Integer emotion, Long date) {
+        this.writer = writer;
         this.contents = contents;
         this.emotion = emotion;
         this.date = date;
